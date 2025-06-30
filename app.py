@@ -270,7 +270,7 @@ def delete_report(report_id):
 
 @app.route('/lost')
 def lost():
-    return render_template('lost.html')
+    return render_template('Lost.html')
 @app.route('/support')
 def support():
     return render_template('support.html')
