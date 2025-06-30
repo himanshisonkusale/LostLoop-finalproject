@@ -166,6 +166,7 @@ def item_details(item_id):
         longitude=lng,
         user=user_email,
         item_id=item_id,
+        maps_api_key = AIzaSyD8VyRQO0Yoft6pC5qNHjrs0XS2316t1hc,
         # maps_api_key=GOOGLE_MAPS_API_KEY  # 👈 pass to template
     )
 
