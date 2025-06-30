@@ -155,7 +155,7 @@ def item_details(item_id):
     lng = item.get('longitude', 75.8577)
     user_email = session.get('user', 'Guest')
 
-    maps_api_key = os.environ.get("GOOGLE_MAPS_API_KEY")
+   
 
     # # Get Google Maps API key from environment
     # GOOGLE_MAPS_API_KEY = os.environ.get("GOOGLE_MAPS_API_KEY")
