@@ -76,9 +76,13 @@
                                 <p class="info-text"><strong>Description:</strong> {{ item.description }}</p>
                                 <p class="info-text"><strong>Location:</strong> {{ item.location }}</p>
                                 <p class="info-text"><strong>Status:</strong> {{ item.status }}</p>
-                                <p><strong>Contact Email:</strong>
-                                    <a href="mailto:{{ user }}">{{ user }}</a>
-                                </p>
+                                <p class="support-email-text">
+  Contact Email 
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to={{ user }}" target="_blank">
+    {{ user }}
+  </a>
+</p>
+
                             </div>
 
                             <div class="action-buttons">
