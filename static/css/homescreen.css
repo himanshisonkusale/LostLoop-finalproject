@@ -1565,6 +1565,8 @@ img {
     border-radius: 26px;
   
   }
+  
+
 }
 
 
@@ -1698,5 +1700,16 @@ img {
 
   .nav-button .layered-button-text {
     font-size: 0.75rem !important;
+  }
+  .logo-link{
+    margin-left:-20px;
+  }
+  .logo-image{
+    margin-left:-14px;
+    margin-top: 24px;
+  }
+  .header-nav{
+    margin-left:-167px;
+    padding-left:147px;
   }
 }
