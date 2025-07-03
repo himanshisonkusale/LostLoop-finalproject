@@ -511,3 +511,20 @@ body {
         display: none; 
     }
 }
+
+
+
+.login-prompt {
+    margin-top: 98px;
+    text-align: center;
+    padding-bottom: 80px; /* 👈 Add extra space here */
+    height: fit-content;
+}
+
+.site-footer-section {
+    width: 100%;
+    background-color: #27343f;
+    margin-top: 100px;
+    padding: 300px 0 120px;  /* ⬅️ Increased padding to raise height from bottom */
+    box-sizing: border-box;
+}

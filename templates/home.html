@@ -6,6 +6,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Trispace&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>LostLoop | Home</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
@@ -27,6 +29,8 @@
     <section id="section-main" class="main-section-wrapper">
       <div class="main-content-area">
         <!-- Sidebar -->
+         <div class="hamburger" onclick="toggleSidebar()">☰</div>
+
         <aside class="sidebar">
           <nav class="sidebar__nav">
             <ul class="sidebar__nav-list">
@@ -80,5 +84,13 @@
       </div>
     </section>
   </div>
+  <script>
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('collapsed');
+  }
+</script>
+
 </body>
+
 </html>
