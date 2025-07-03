@@ -211,7 +211,7 @@ body {
 }
 
 /* ✅ MOBILE OPTIMIZATION */
-@media (max-width: 480px) {
+@media (max-width: 329px) {
   /* Make buttons responsive */
   .content-panel__button {
     width: 100%;
