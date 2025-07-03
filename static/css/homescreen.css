@@ -1531,6 +1531,8 @@ img {
     gap: 12px !important;
     position: static !important;
     width: auto !important;
+    margin-left:-167px !important;
+    padding-left:115px !important;
   }
 
   .nav-right {
@@ -1565,6 +1567,15 @@ img {
     border-radius: 26px;
   
   }
+  .logo-link{
+    margin-left:-20px;
+  }
+  .logo-image{
+    margin-left:-14px;
+    margin-top: 24px;
+    width:120px;
+  }
+ 
   
 
 }
@@ -1581,6 +1592,7 @@ img {
   flex-wrap: wrap !important;
   gap: 10px !important;
 }
+
 
 
 
@@ -1666,6 +1678,68 @@ img {
 
 
 @media (max-width: 480px) {
+  .header-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    /* ✅ side by side */
+    flex-wrap: nowrap !important;
+    /* ✅ don’t wrap */
+    justify-content: center !important;
+    /* ✅ center all buttons */
+    align-items: center !important;
+    /* ✅ vertical align */
+    gap: 6px !important;
+    /* ✅ slightly smaller gap */
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .nav-right {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+
+  .header-nav a,
+  .nav-right a,
+  .nav-button {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    white-space: nowrap !important;
+    font-size: 0.75rem !important;
+    padding: 0.35rem 0.5rem !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+
+  }
+
+  .layered-button {
+    border: 2px solid rgb(2, 2, 32) !important;
+  }
+
+  .nav-button .layered-button-text {
+    font-size: 0.75rem !important;
+  }
+  .logo-link{
+    margin-left:-20px;
+  }
+  .logo-image{
+    margin-left:-14px;
+    margin-top: 24px;
+    width:120px;
+  }
+  .header-nav{
+    margin-left:-167px;
+    padding-left:115px;
+  }
+
+}
+
+@media (max-width: 510px) {
   .header-nav {
     display: flex !important;
     flex-direction: row !important;
