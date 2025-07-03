@@ -1718,10 +1718,11 @@ img {
   .logo-image{
     margin-left:-14px;
     margin-top: 24px;
+    width:120px;
   }
   .header-nav{
     margin-left:-167px;
-    padding-left:147px;
+    padding-left:115px;
   }
 
 }
