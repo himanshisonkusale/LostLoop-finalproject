@@ -1717,9 +1717,7 @@ img {
 
   }
 
-  .layered-button {
-    border: 2px solid rgb(2, 2, 32) !important;
-  }
+  
 
   .nav-button .layered-button-text {
     font-size: 0.75rem !important;
@@ -1735,6 +1733,19 @@ img {
   .header-nav{
     margin-left:-167px;
     padding-left:115px;
+  }
+
+  .login-button{
+  
+    border: 2px solid rgb(2, 2, 32);
+  }
+  .signup-button{
+  
+    border: 2px solid rgb(2, 2, 32);
+  }
+  .logout-button{
+  
+    border: 2px solid rgb(2, 2, 32);
   }
 
 }
