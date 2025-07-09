@@ -369,3 +369,41 @@ body {
 .hamburger{
   display:none;
 }
+
+
+
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background-color: white;
+  min-width: 100px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.dropdown-content a.logout-btn {
+  color: red;
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.dropdown-content a.logout-btn:hover {
+  background-color: #ffe6e6;
+}

@@ -145,9 +145,11 @@ body {
   font-weight: 400; 
   font-size: 36px;
   line-height: 45px; 
+  max-width: 40ch;
+  text-align: center;
   margin: 0; 
-  margin-left: 262px;
-}
+  margin-left: 100px;
+} 
 
 .site-footer-main {
   text-align: center;
@@ -167,3 +169,4 @@ body {
 .site-footer-main a:hover {
   text-decoration: underline;
 }
+

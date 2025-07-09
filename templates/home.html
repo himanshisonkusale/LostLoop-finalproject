@@ -16,16 +16,31 @@
     <!-- Header -->
 
     <section id="section-header">
-      
-      <header class="site-header">
-        <nav class="site-header__nav">
-          <a href="{{ url_for('support') }}" class="site-header__nav-item site-header__nav-item--support">Support</a>
-          <!-- <span class="site-header__user-name">Name</span> -->
-          <h2 style="color: #FFFFFF; font-size: 19px;">{{username}} </h2>
-          <img src="{{ url_for('static', filename='images/Ellipse 2.svg') }}" alt="User Avatar" class="site-header__avatar" style="margin-left: 20px;">
-        </nav>
-      </header>
-    </section>
+  <header class="site-header">
+    <nav class="site-header__nav">
+      <a href="{{ url_for('support') }}" class="site-header__nav-item site-header__nav-item--support">Support</a>
+      <h2 style="color: #FFFFFF; font-size: 19px;">{{username}} </h2>
+
+      <!-- Avatar + Dropdown -->
+      <div style="position: relative; display: inline-block;">
+        <img src="{{ url_for('static', filename='images/Ellipse 2.svg') }}" 
+             alt="User Avatar" 
+             class="site-header__avatar" 
+             style="margin-left: 20px; cursor: pointer;" 
+             id="avatarBtn">
+
+        <!-- Dropdown menu (initially hidden) -->
+        <div id="dropdownMenu" 
+             style="display: none; position: absolute; top: 50px; right: 0; background: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); z-index: 100;">
+          <a href="{{ url_for('logout') }}" 
+             style="display: block; padding: 10px 20px; color: red; font-weight: bold; text-align: center; text-decoration: none;">
+            Logout
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+</section>
 
     <!-- Main -->
     <section id="section-main" class="main-section-wrapper">
@@ -87,19 +102,21 @@
     </section>
   </div>
   <script>
-  function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.classList.toggle('collapsed');
-  }
-</script>
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const sidebar = document.querySelector('.sidebar');
+  const avatar = document.getElementById('avatarBtn');
+  const dropdown = document.getElementById('dropdownMenu');
 
-  hamburger.addEventListener('click', () => {
-    sidebar.classList.toggle('collapsed');
+  avatar.addEventListener('click', function (e) {
+    e.stopPropagation(); // Prevents click from bubbling to document
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!dropdown.contains(e.target) && e.target !== avatar) {
+      dropdown.style.display = 'none';
+    }
   });
 </script>
+
 
 
 </body>
