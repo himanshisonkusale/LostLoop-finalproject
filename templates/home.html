@@ -14,7 +14,9 @@
 <body>
   <div class="page-container">
     <!-- Header -->
+
     <section id="section-header">
+      
       <header class="site-header">
         <nav class="site-header__nav">
           <a href="{{ url_for('support') }}" class="site-header__nav-item site-header__nav-item--support">Support</a>
@@ -90,6 +92,15 @@
     sidebar.classList.toggle('collapsed');
   }
 </script>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const sidebar = document.querySelector('.sidebar');
+
+  hamburger.addEventListener('click', () => {
+    sidebar.classList.toggle('collapsed');
+  });
+</script>
+
 
 </body>
 
