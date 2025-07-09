@@ -115,6 +115,20 @@
       dropdown.style.display = 'none';
     }
   });
+
+   function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('sidebar--active');
+  }
+  
+  if (!dropdown.contains(e.target) && e.target !== avatar) {
+      dropdown.style.display = 'none';
+    }
+
+    // Close sidebar if clicked outside of sidebar and hamburger
+    if (!sidebar.contains(e.target) && e.target !== hamburger) {
+      sidebar.classList.remove('sidebar--active');
+    };
 </script>
 
 
