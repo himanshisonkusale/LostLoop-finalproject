@@ -17,7 +17,9 @@
 
     <section id="section-header">
   <header class="site-header">
+    <div class="hamburger" onclick="toggleSidebar()">☰</div>
     <nav class="site-header__nav">
+      
       <a href="{{ url_for('support') }}" class="site-header__nav-item site-header__nav-item--support">Support</a>
       <h2 style="color: #FFFFFF; font-size: 19px;">{{username}} </h2>
 
@@ -46,9 +48,10 @@
     <section id="section-main" class="main-section-wrapper">
       <div class="main-content-area">
         <!-- Sidebar -->
-         <div class="hamburger" onclick="toggleSidebar()">☰</div>
-
-        <aside class="sidebar">
+        
+        
+        <aside class="sidebar" id="sidebar">
+          <div class="close-btn" onclick="toggleSidebar()">✕</div> <!-- Only visible on small screens -->
           <nav class="sidebar__nav">
             <ul class="sidebar__nav-list">
               <li class="sidebar__nav-item">

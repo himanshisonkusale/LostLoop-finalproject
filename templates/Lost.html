@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <title>Lost Item Report</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Lost.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <section id="section-header">
   <header class="site-header">
     <div class="header-content">
+      <div class="hamburger" onclick="toggleSidebar()">☰</div>
       <a href="{{ url_for('support') }}" class="header-link support-link">Support</a>
       <div class="user-profile">
         <h2 style="color: #FFFFFF; font-size: 19px;">{{username}} </h2>
@@ -20,21 +22,23 @@
 
 <section id="section-report-form-page" class="report-form-page-section">
   <div class="main-layout">
-    <aside class="sidebar">
-      <nav class="sidebar-nav">
-        <ul>
-          <li><a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="" class="nav-icon">Home</a></li>
-          <li><a href="{{ url_for('search') }}"><img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="" class="nav-icon">Search</a></li>
-          <li><a href="{{ url_for('support') }}"><img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="" class="nav-icon">Support</a></li>
-        </ul>
-      </nav>
-      <div class="sidebar-footer-link">
-        <a href="{{ url_for('homescreen') }}">
-          <img src="{{ url_for('static', filename='images/Screenshot 2025-06-07 034101 1.png') }}" alt="" class="nav-icon">
-          How It Helps
-        </a>
-      </div>
-    </aside>
+    <aside class="sidebar" id="sidebar">
+  <div class="close-btn" onclick="toggleSidebar()">✕</div> <!-- Only visible on small screens -->
+  <nav class="sidebar-nav">
+    <ul>
+      <li><a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="" class="nav-icon">Home</a></li>
+      <li><a href="{{ url_for('search') }}"><img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="" class="nav-icon">Search</a></li>
+      <li><a href="{{ url_for('support') }}"><img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="" class="nav-icon">Support</a></li>
+    </ul>
+  </nav>
+  <div class="sidebar-footer-link">
+    <a href="{{ url_for('homescreen') }}">
+      <img src="{{ url_for('static', filename='images/Screenshot 2025-06-07 034101 1.png') }}" alt="" class="nav-icon">
+      How It Helps
+    </a>
+  </div>
+</aside>
+
 
     <main class="form-area-wrapper">
       <div class="form-area-outer-bg">
@@ -106,5 +110,13 @@
     </main>
   </div>
 </section>
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("active");
+  }
+</script>
+
+
 </body>
 </html>

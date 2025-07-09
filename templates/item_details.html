@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/item_details.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -11,7 +12,9 @@
     <section id="section-header" class="header-section">
         <div class="page-wrapper">
             <header class="site-header">
+                <div class="hamburger" onclick="toggleSidebar()">☰</div>
                 <nav class="header-nav">
+                    
                     <a href="{{ url_for('support') }}" class="nav-link support-link">Support</a>
                     <h2 style="color: #FFFFFF; font-size: 19px;">{{username}} </h2>
                     <img src="{{ url_for('static', filename='images/Ellipse 2.svg') }}" alt="User Avatar"
@@ -25,23 +28,27 @@
         <div class="page-wrapper">
             <div class="dashboard-layout">
 
-                <aside class="sidebar">
+                <aside class="sidebar" id="sidebar">
+                    <div class="close-btn" onclick="toggleSidebar()">✕</div> <!-- Only visible on small screens -->
                     <nav class="sidebar-nav">
-                        <a href="{{ url_for('home') }}" class="sidebar-nav-item">
+                        <ul style="list-style: none;">
+
+                        <li><a href="{{ url_for('home') }}" class="sidebar-nav-item">
                             <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}"
                                 alt="Home Icon" class="nav-icon">
                             <span>Home</span>
-                        </a>
-                        <a href="{{ url_for('search') }}" class="sidebar-nav-item">
+                        </a></li>
+                        <li><a href="{{ url_for('search') }}" class="sidebar-nav-item">
                             <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}"
                                 alt="Search Icon" class="nav-icon">
                             <span>Search</span>
-                        </a>
-                        <a href="{{ url_for('support') }}" class="sidebar-nav-item">
+                        </a></li>
+                        <li><a href="{{ url_for('support') }}" class="sidebar-nav-item">
                             <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}"
                                 alt="Support Icon" class="nav-icon">
                             <span>Support</span>
-                        </a>
+                        </a></li>
+                        </ul>
                     </nav>
                     <a href="{{ url_for('homescreen') }}" class="sidebar-nav-item how-it-helps">
                         <img src="{{ url_for('static', filename='images/Screenshot 2025-06-07 034101 1.png') }}"
@@ -122,6 +129,12 @@
         </div>
         </div>
     </section>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("active");
+        }
+    </script>
 </body>
 
 </html>

@@ -1,8 +1,16 @@
-body {
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
+}
+body {
   font-family: 'Hammersmith One', sans-serif;
+  margin: 0;
+  padding: 0;
   background: linear-gradient(0deg, #c7e0f9 25.16%, #c7e0f9 37.63%, #c7e0f9 43.69%, #7fc8fd 52.07%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 * {
@@ -13,7 +21,7 @@ body {
   max-width: 1512px;
   height: 982px;
   margin: 0 auto;
-  background: linear-gradient(0deg, #c7e0f9 25.16%, #c7e0f9 37.63%, #c7e0f9 43.69%, #7fc8fd 52.07%);
+  
   overflow: hidden;
   position: relative;
 }
@@ -321,3 +329,206 @@ body {
 
 
 
+@media (max-width: 1200px) {
+  .main-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .sidebar {
+    width: 90%;
+    max-width: 400px; 
+    height: auto; 
+    padding: 30px;
+  }
+  .sidebar-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .sidebar-nav li {
+    margin-bottom: 0;
+  }
+  .sidebar-footer-link {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .form-area-wrapper {
+    width: 90%;
+    max-width: 700px;
+    margin-top: 0;
+  }
+  .form-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .form-mascot-image {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+  .input-field, .textarea-field, .custom-select-lookalike, .submit-button, .image-upload-box {
+    width: 100%;
+  }
+  .reporting-group {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 0 20px;
+    height: auto;
+    min-height: 80px;
+  }
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+  .header-link {
+    margin-right: 0;
+  }
+  .user-name {
+    font-size: 22px;
+  }
+  .user-avatar {
+    width: 60px;
+    height: 60px;
+  }
+  .form-title {
+    font-size: 28px;
+  }
+  .form-area-outer-bg {
+    padding: 20px;
+  }
+  .form-area-inner-bg {
+    padding: 30px 20px;
+  }
+  .sidebar-nav a, .sidebar-footer-link a {
+    font-size: 24px;
+  }
+  .submit-button {
+    font-size: 24px;
+    height: 60px;
+  }
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.close-btn {
+  display: none;
+  font-size: 26px;
+  color: #0a3960;
+  text-align: right;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+/* Mobile View */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .sidebar-nav ul {
+  display: flex;
+  flex-direction: column;  /* STACK vertically */
+  align-items: flex-start; /* Align left if needed */
+  gap: 40px;               /* Add space between links */
+}
+
+.sidebar-nav li {
+  margin-bottom: 0;  /* No extra margin, gap handles it */
+}
+
+
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(65, 89, 100, 0.95);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding-top: 40px;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .close-btn {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .main-layout {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  .form-area-wrapper {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 1260px) {
+  .hamburger {
+    display: block;
+  }
+  .sidebar-nav ul {
+  display: flex;
+  flex-direction: column;  /* STACK vertically */
+  align-items: flex-start; /* Align left if needed */
+  gap: 40px;               /* Add space between links */
+}
+
+.sidebar-nav li {
+  margin-bottom: 0;  /* No extra margin, gap handles it */
+}
+
+
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(65, 89, 100, 0.95);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding-top: 40px;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .close-btn {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .main-layout {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  .form-area-wrapper {
+    min-width: unset;
+    width: 100%;
+  }
+}

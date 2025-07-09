@@ -9,7 +9,7 @@ body {
 .page-wrapper {
   max-width: 1512px;
   margin: 0 auto;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .button-base {
@@ -24,11 +24,11 @@ body {
 }
 
 .site-header {
-  height: 119px; 
+  height: 119px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 0 30px; 
+  padding: 0 30px;
 }
 
 .header-nav {
@@ -37,7 +37,7 @@ body {
 }
 
 .nav-link {
-  color: #ffffff; 
+  color: #ffffff;
   font-family: 'Hammersmith One', sans-serif;
   font-weight: 400;
   text-decoration: none;
@@ -45,97 +45,103 @@ body {
 
 .support-link {
   font-size: 20px;
-  line-height: 25px; 
+  line-height: 25px;
   margin-right: 45px;
 }
 
 .name-link {
   font-size: 27px;
-  line-height: 33.75px; 
-  margin-right: 20px; 
+  line-height: 33.75px;
+  margin-right: 20px;
 }
 
 .user-avatar {
-  width: 80px; 
-  height: 80px; 
-  border-radius: 50%; 
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 
 
-.dashboard-section .page-wrapper { 
-  padding-top: 14px; 
-  padding-left: 12px; 
-  padding-right: 12px; 
-  padding-bottom: 40px; 
+.dashboard-section .page-wrapper {
+  padding-top: 14px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 40px;
 }
 
 .dashboard-layout {
   display: flex;
-  gap: 52px; 
+  gap: 52px;
 }
 
 .sidebar {
   width: 347px;
-  height: 832px; 
-  background-color: rgba(65, 89, 100, 0.3); 
-  border-radius: 30px; 
-  padding: 56px 0 0 64px; 
+  height: 832px;
+  background-color: rgba(65, 89, 100, 0.3);
+  border-radius: 30px;
+  padding: 56px 0 0 64px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+
 }
 
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  width:200px;
+  width: 200px;
+
 }
 
 .sidebar-nav-item {
   display: flex;
   align-items: center;
-  gap: 16px; 
-  margin-bottom: 42px; 
+  gap: 16px;
+  margin-bottom: 42px;
   text-decoration: none;
-  color: #0a3960; 
-  font-family: 'Hammersmith One', sans-serif; 
-  font-weight: 400; 
+  color: #0a3960;
+  font-family: 'Hammersmith One', sans-serif;
+  font-weight: 400;
   font-size: 29px;
   line-height: 36.25px;
+
 }
+
+
 .sidebar-nav-item:last-child {
   margin-bottom: 0;
 }
 
 .nav-icon {
   width: 28.75px;
-  height: 28.75px; 
+  height: 28.75px;
 }
+
 .how-it-helps .nav-icon {
-    width: 52.5px; 
-    height: 48px;
+  width: 52.5px;
+  height: 48px;
 }
 
 
 .how-it-helps {
-  margin-top: auto; 
-  padding-bottom: 58px; 
+  margin-top: auto;
+  padding-bottom: 58px;
 }
 
 .main-content-column {
-  max-width: 700px;    
-  width: 100%; 
+  max-width: 700px;
+  width: 100%;
   padding: 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  gap: 40px; 
-  margin-top: 27px; 
+  gap: 40px;
+  margin-top: 27px;
 }
 
 .item-details-card-wrapper {
   background-color: rgba(255, 255, 255, 0.76);
-  border-radius: 20px; 
+  border-radius: 20px;
   width: 880px;
   height: 778px;
   padding: 30px 38px;
@@ -143,11 +149,11 @@ body {
 }
 
 .item-details-card-wrapper img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-    border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
 }
 
 
@@ -155,7 +161,7 @@ body {
   background-color: #d0e7ed;
   border-radius: 10px;
   width: 800px;
-  height: 708px; 
+  height: 708px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -164,66 +170,67 @@ body {
 }
 
 .mark-claimed-button {
-  background-color: #303b49; 
-  border-radius: 30px; 
-  color: #ffffff; 
+  background-color: #303b49;
+  border-radius: 30px;
+  color: #ffffff;
   font-family: 'Hammersmith One', sans-serif;
-  font-weight: 400; 
-  font-size: 20px; 
-  line-height: 25px; 
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
   border: none;
   cursor: pointer;
-  width: 404px; 
-  height: 47px; 
-  margin-top: calc(77px - 30px); 
+  width: 404px;
+  height: 47px;
+  margin-top: calc(77px - 30px);
   margin-bottom: calc(141px - 77px - 47px);
 }
 
 .image-placeholder {
   background-color: #ffffff;
-  width: 415px; 
+  width: 415px;
   height: 343px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 26px; 
+  margin-bottom: 26px;
 }
 
 .image-placeholder-text {
   color: #000000;
   font-family: 'Hammersmith One', sans-serif;
-  font-weight: 400; 
-  font-size: 36px; 
-  line-height: 45px; 
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 45px;
 }
 
 .item-info {
   text-align: left;
-  width: 415px; 
-  margin-bottom: 19px; 
+  width: 415px;
+  margin-bottom: 19px;
 }
 
 .info-text {
-  color: #000000; 
-  font-family: 'Hammersmith One', sans-serif; 
-  font-weight: 400; 
+  color: #000000;
+  font-family: 'Hammersmith One', sans-serif;
+  font-weight: 400;
   font-size: 20px;
   line-height: 25px;
-  margin: 0 0 4px 0; 
+  margin: 0 0 4px 0;
 }
+
 .info-text:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .action-buttons {
   display: flex;
-  gap: 27px; 
+  gap: 27px;
   justify-content: center;
-  width: 100%; 
+  width: 100%;
 }
 
 .action-button {
-  background-color: #686d86; 
+  background-color: #686d86;
   border-radius: 30px;
   color: #ffffff;
   font-family: 'Hammersmith One', sans-serif;
@@ -250,15 +257,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 20px; 
+  padding: 20px;
 }
 
 
 .location-map-text {
   align-self: center;
-  color: #000000; 
-  font-family: 'Hammersmith One', sans-serif; 
-  font-weight: 400; 
+  color: #000000;
+  font-family: 'Hammersmith One', sans-serif;
+  font-weight: 400;
   font-size: 36px;
   line-height: 45px;
 }
@@ -270,27 +277,37 @@ body {
     align-items: center;
     gap: 30px;
   }
+
   .sidebar {
     width: 100%;
     max-width: 500px;
-    height: auto; 
+    height: auto;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
   }
+
   .how-it-helps {
     margin-top: 30px;
     padding-bottom: 0;
   }
+
   .main-content-column {
     margin-top: 0;
     width: 100%;
     align-items: center;
   }
-  .item-details-card-wrapper, .location-map-card {
+
+  .item-details-card-wrapper,
+  .location-map-card {
     width: 100%;
-    max-width: 700px; 
+    max-width: 700px;
   }
-   .item-details-card, .image-placeholder, .item-info {
-    width: 100% !important; 
+
+  .item-details-card,
+  .image-placeholder,
+  .item-info {
+    width: 100% !important;
   }
 }
 
@@ -302,29 +319,37 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
   }
+
   .header-nav {
     flex-direction: column;
     gap: 10px;
   }
-  .support-link, .name-link {
+
+  .support-link,
+  .name-link {
     margin-right: 0;
   }
+
   .dashboard-section .page-wrapper {
     padding-left: 10px;
     padding-right: 10px;
   }
+
   .action-buttons {
     flex-direction: column;
     gap: 15px;
     align-items: center;
   }
+
   .action-button {
     width: 80%;
     max-width: 200px;
   }
+
   .item-details-card {
     padding: 20px;
   }
+
   .mark-claimed-button {
     width: 80%;
     max-width: 300px;
@@ -335,8 +360,283 @@ body {
 
 
 
+@media (max-width: 1200px) {
+  .main-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .sidebar {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+
+}
+
+.sidebar-nav li {
+  margin-bottom: 0;
+}
+
+.sidebar-footer-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.form-area-wrapper {
+  width: 90%;
+  max-width: 700px;
+  margin-top: 0;
+}
+
+.form-header {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.form-mascot-image {
+  margin-top: 20px;
+  margin-left: 0;
+}
+
+.input-field,
+.textarea-field,
+.custom-select-lookalike,
+.submit-button,
+.image-upload-box {
+  width: 100%;
+}
+
+.reporting-group {
+  width: 100%;
+}
+
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 0 20px;
+    height: auto;
+    min-height: 80px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .header-link {
+    margin-right: 0;
+  }
+
+  .user-name {
+    font-size: 22px;
+  }
+
+  .user-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .form-title {
+    font-size: 28px;
+  }
+
+  .form-area-outer-bg {
+    padding: 20px;
+  }
+
+  .form-area-inner-bg {
+    padding: 30px 20px;
+  }
+
+  .sidebar-nav a,
+  .sidebar-footer-link a {
+    font-size: 24px;
+  }
+
+  .submit-button {
+    font-size: 24px;
+    height: 60px;
+  }
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.close-btn {
+  display: none;
+  font-size: 26px;
+  color: #0a3960;
+  text-align: right;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-bottom: 58px;
+}
+
+.sidebar-nav-item how-it-helps {
+  margin-top: auto;
+  padding-bottom: 58px;
+}
+
+
+/* Mobile View */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar-nav ul {
+    display: flex;
+    flex-direction: column;
+    /* STACK vertically */
+    align-items: flex-start;
+    /* Align left if needed */
+    gap: 40px;
+    /* Add space between links */
+  }
+
+  .sidebar-nav li {
+    margin-bottom: 0;
+    /* No extra margin, gap handles it */
+  }
+
+  .sidebar-nav-item how-it-helps {
+    margin-top: auto;
+    padding-bottom: 58px;
+  }
 
 
 
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(65, 89, 100, 0.95);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .close-btn {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .main-layout {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  .form-area-wrapper {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .sidebar-footer {
+    margin-top: auto;
+    padding-bottom: 58px;
+  }
+
+}
 
 
+@media screen and (max-width: 1260px) {
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar-nav ul {
+    display: flex;
+    flex-direction: column;
+    /* STACK vertically */
+    align-items: flex-start;
+    /* Align left if needed */
+    gap: 40px;
+    /* Add space between links */
+  }
+
+  .sidebar-nav li {
+    margin-bottom: 0;
+    /* No extra margin, gap handles it */
+  }
+
+
+  .sidebar-nav-item how-it-helps {
+    margin-top: auto;
+    padding-bottom: 58px;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(65, 89, 100, 0.95);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .close-btn {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .main-layout {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  .form-area-wrapper {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .sidebar-footer {
+    margin-top: auto;
+    padding-bottom: 58px;
+  }
+
+}
