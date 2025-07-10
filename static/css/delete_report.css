@@ -146,40 +146,7 @@ body {
 
 
 
-@media (max-width: 768px) {
-  .delete-box {
-    position: fixed;
-    top: 120px;
-    left: 0;
-    width: 80px;
-    height: 50px;
-    background-color: #303B49;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0 10px 10px 0;
-    z-index: 1000;
-    cursor: pointer;
-  }
 
-
-  .sidebar {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 60px;
-    height: 100vh;
-    flex-direction: column;
-    padding: 10px 0;
-  }
-
-
-  .content-panel {
-    margin-left: 140px;
-    padding: 20px;
-  }
-}
 
 
 .dialog-outer-container {
@@ -351,53 +318,11 @@ body {
 }
 
 
-@media (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    overflow-x: auto;
-  }
-
-  .content-panel {
-    padding: 20px;
-  }
-
-  .dialog-buttons {
-    flex-direction: column;
-  }
-
-  .user-info {
-    flex-direction: column;
-  }
-}
 
 
 
-@media (max-width: 768px) {
-  .dialog-outer-container {
-    padding: 20px;
-    width: 90%;
-    margin: 0 auto;
-    max-width: 90vw;
 
-  }
 
-  .dialog-question {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-
-  .dialog-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .button {
-    width: 100%;
-    text-align: center;
-  }
-}
 
 @media (max-width: 480px) {
   .dialog-outer-container {
@@ -420,21 +345,6 @@ body {
 
 
 
-@media (max-width: 768px) {
-  .content-panel {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .dialog-outer-container {
-    margin: auto;
-    max-width: 90%;
-
-  }
-}
 
 @media (max-width: 480px) {
   .content-panel {
@@ -512,54 +422,6 @@ body {
   }
 }
 
-@media (max-width: 768px) {
-  .site-header {
-    padding: 0 20px;
-    height: auto;
-    min-height: 80px;
-  }
-
-  .header-content {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 0;
-  }
-
-  .header-link {
-    margin-right: 0;
-  }
-
-  .user-name {
-    font-size: 22px;
-  }
-
-  .user-avatar {
-    width: 60px;
-    height: 60px;
-  }
-
-  .form-title {
-    font-size: 28px;
-  }
-
-  .form-area-outer-bg {
-    padding: 20px;
-  }
-
-  .form-area-inner-bg {
-    padding: 30px 20px;
-  }
-
-  .sidebar-nav a,
-  .sidebar-footer-link a {
-    font-size: 24px;
-  }
-
-  .submit-button {
-    font-size: 24px;
-    height: 60px;
-  }
-}
 
 
 .hamburger {
@@ -606,7 +468,7 @@ body {
     position: fixed;
     top: 0;
     left: -100%;
-    width: 70%;
+    width: 100%;
     height: 100%;
     background-color: rgba(65, 89, 100, 0.95);
     z-index: 1000;
@@ -632,6 +494,8 @@ body {
     min-width: unset;
     width: 100%;
   }
+
+  
 }
 
 
@@ -686,5 +550,24 @@ body {
   .form-area-wrapper {
     min-width: unset;
     width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .site-header {
+    width: 100% !important; /* instead of 100vw */
+    left: 0;
+    right: 0;
+    position: fixed; /* make sure it stays fixed if you want sticky */
+    top: 0;
+    background: linear-gradient(to right, #003366, #004080);
+    box-sizing: border-box;
+    
+  }
+  
+
+  body {
+    overflow-x: hidden; /* remove any horizontal scroll */
   }
 }
