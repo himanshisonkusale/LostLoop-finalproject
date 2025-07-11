@@ -119,7 +119,7 @@ if __name__ == "__main__":
     asyncio.run(setup())
 
     with gr.Blocks(theme=gr.themes.Base(primary_hue="slate", neutral_hue="slate")) as demo:
-        gr.Markdown("<h1 style='color:black;text-align:center;'>🔍 Lost & Found Agent</h1>", elem_id="title")
+        gr.Markdown("<h1 style='color:black;text-align:center;'>🔍 LostLoop Agent</h1>", elem_id="title")
         chatbot = gr.Chatbot([], elem_id="chatbot", height=500, type='messages')
         msg = gr.Textbox(label="Your Message", placeholder="Type your question here…")
         clear = gr.Button("Clear")
