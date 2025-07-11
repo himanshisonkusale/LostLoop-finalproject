@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #eaf4fc;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  background: linear-gradient(to bottom, #dbe9f6, #bcd3e9);
+  width: 220px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0 20px 20px 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin-top: 30px;
+}
+
+.sidebar li {
+  margin: 25px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #0a2c4d;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.how-it-helps {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Chat Panel */
+.chat-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f8fc;
+  border-radius: 20px;
+  margin: 15px;
+  overflow: hidden;
+}
+
+.chat-header {
+  background-color: #114b73;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header .title {
+  font-size: 20px;
+}
+
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+/* Chat Body */
+.chat-body {
+  flex: 1;
+  padding: 30px;
+  background-color: #c7e6f8;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.bot-msg {
+  background-color: white;
+  align-self: flex-start;
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 60%;
+  font-size: 16px;
+}
+
+.user-msg.input-box {
+  background-color: #fefefe;
+  height: 60px;
+  width: 60%;
+  border-radius: 12px;
+}
+
+/* Footer */
+.chat-footer {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  background-color: #f2f8fc;
+}
+
+.chat-footer input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #a8cce7;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.send-btn {
+  background-color: #00bfff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
