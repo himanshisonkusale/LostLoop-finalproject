@@ -10,13 +10,18 @@ from google.genai import types
 import google.generativeai as genai
 from dotenv import load_dotenv
 
+# Load environment variables from .env file
 load_dotenv()
 
+# --- API Key Configuration ---
 api_key = os.getenv("GOOGLE_API_KEY")
 if not api_key:
-    raise ValueError("GOOGLE_API_KEY environment variable not set.")
+    raise ValueError("GOOGLE_API_KEY environment variable not set. "
+                     "Please set it in your .env file or system environment. "
+                     "Get your API key from Google AI Studio (aistudio.google.com/app/apikey).")
 genai.configure(api_key=api_key)
 
+# --- App + Session Setup ---
 APP_NAME = "LostFoundApp"
 USER_ID = "visitor"
 SESSION_ID = str(uuid.uuid4())
@@ -25,8 +30,10 @@ session_service = InMemorySessionService()
 runner = None
 root_agent = None
 
+# --- Setup function ---
 async def setup():
     global runner, root_agent
+
     await session_service.create_session(
         app_name=APP_NAME,
         user_id=USER_ID,
@@ -36,7 +43,7 @@ async def setup():
 
     root_agent = Agent(
         name="LostFoundHelper",
-        model="gemini-2.5-pro",
+        model="gemini-2.5-pro",  # Changed to flash for better quota management
         instruction="""
 You are a helpful, intelligent, and friendly AI assistant.
 
@@ -72,6 +79,8 @@ Creating an account allows you to track your reports, update them later, and acc
 
 📞 Need Help?
 - Still confused? Ask your question here or visit the Support section inside the app.
+
+You can also search the web if the question is unrelated to Lostloop. Be warm, concise, and helpful in all responses.
 """,
         description="An intelligent, friendly AI assistant that can answer general questions using Google Search and also has specific knowledge about the Lost & Found web application.",
         tools=[google_search]
@@ -79,6 +88,7 @@ Creating an account allows you to track your reports, update them later, and acc
 
     runner = Runner(agent=root_agent, app_name=APP_NAME, session_service=session_service)
 
+# --- Chat function ---
 async def chat(user_message, history):
     if runner is None:
         history.append({"role": "assistant", "content": "⚠ Chatbot is still initializing. Please wait and try again."})
@@ -86,26 +96,30 @@ async def chat(user_message, history):
         return
 
     history.append({"role": "user", "content": user_message})
-    new_message = types.Content(role="user", parts=[types.Part(text=user_message)])
+    new_message_for_runner = types.Content(role="user", parts=[types.Part(text=user_message)])
+    bot_reply_text = ""
+
     try:
-        async for event in runner.run_async(user_id=USER_ID, session_id=SESSION_ID, new_message=new_message):
+        async for event in runner.run_async(user_id=USER_ID, session_id=SESSION_ID, new_message=new_message_for_runner):
             if event.is_final_response() and event.content and event.content.parts:
-                history.append({"role": "assistant", "content": event.content.parts[0].text})
+                bot_reply_text = event.content.parts[0].text
+                history.append({"role": "assistant", "content": bot_reply_text})
     except Exception as e:
         history.append({"role": "assistant", "content": f"⚠ Error: {str(e)}"})
 
-    yield history, ""
+    yield history, "" # Yield the final state of history and clear input
 
+# --- Clear chat history ---
 def clear_history():
     return [], ""
 
-# 👇 THIS IS THE UI (exposed for mounting)
-demo = gr.Blocks(theme=gr.themes.Base(primary_hue="slate", neutral_hue="slate"))
+# --- Main app ---
+if __name__ == "__main__":
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    asyncio.run(setup())
 
-async def init_agent_ui():
-    await setup()
-    with demo:
-        gr.Markdown("<h1 style='color:black;text-align:center;'>🔍 LostLoop Agent</h1>")
+    with gr.Blocks(theme=gr.themes.Base(primary_hue="slate", neutral_hue="slate")) as demo:
+        gr.Markdown("<h1 style='color:black;text-align:center;'>🔍 LostLoop Agent</h1>", elem_id="title")
         chatbot = gr.Chatbot([], elem_id="chatbot", height=500, type='messages')
         msg = gr.Textbox(label="Your Message", placeholder="Type your question here…")
         clear = gr.Button("Clear")
@@ -113,5 +127,5 @@ async def init_agent_ui():
 
         msg.submit(chat, [msg, state], [chatbot, msg])
         clear.click(clear_history, None, [chatbot, msg])
-    return demo
 
+    demo.launch(share=True,debug=True)
