@@ -1,9 +1,3 @@
-# ✅ Corrected app.py with NO FEATURES REMOVED
-# Fixes:
-# - Corrected _name_ to __name__
-# - Corrected filter bug (undefined status_filter)
-# - Cleaned up comments
-
 from flask import Flask, render_template, request, redirect, url_for, jsonify, abort, flash, session
 import json
 import os
@@ -14,7 +8,12 @@ from datetime import datetime
 from werkzeug.utils import secure_filename
 import sqlite3
 
-app = Flask(__name__)
+# ✅ Gradio + agent chatbot
+import gradio as gr
+import asyncio
+from agent import init_agent_ui  # make sure agent.py is in the same folder
+
+app = Flask(_name_)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "fallback_secret_key")
 
 UPLOAD_FOLDER = os.path.join(app.root_path, 'static', 'uploads')
@@ -326,5 +325,14 @@ def logout():
 def chatbot_page():
     return render_template('chatbot.html')
 
-if __name__ == '__main__':
+# ✅ Mount the Gradio chatbot app at /chatbot
+loop = asyncio.get_event_loop()
+gradio_ui = loop.run_until_complete(init_agent_ui())
+app = gr.mount_gradio_app(app, gradio_ui, path="/chatbot")
+
+if _name_ == '_main_':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
+
+---
+
