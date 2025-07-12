@@ -1,18 +1,17 @@
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Hammersmith One', sans-serif;
-    margin: 0;
-    padding: 0;
-    /* Background gradient moved to chat-interface-section for control */
-    background-color: #e0f2fe; /* A light, solid background for the entire page */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  font-family: 'Hammersmith One', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(0deg, #c7e0f9 25.16%, #c7e0f9 37.63%, #c7e0f9 43.69%, #7fc8fd 52.07%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 * {
@@ -20,133 +19,88 @@ body {
 }
 
 .page-container {
-    max-width: 1512px;
-    /* height: 982px; Removed fixed height to allow content to dictate height */
-    margin: 0 auto;
-    /* overflow: hidden; Removed overflow hidden */
-    position: relative;
-    flex: 1; /* Allows it to grow and push the footer down if there was one on this page */
-    display: flex; /* Make page-container a flex container */
-    flex-direction: column;
+  max-width: 1512px;
+  height: 982px;
+  margin: 0 auto;
+  
+  overflow: hidden;
+  position: relative;
 }
 
 /* --- Header Styles (Desktop Default) --- */
 .site-header {
-    background-color: #0a3960;
-    height: 119px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Align header items to the right */
-    padding-right: 67px; /* Desktop padding */
-    box-sizing: border-box;
+  background-color: #0a3960;
+  height: 119px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 67px;
 }
 
 .header-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Space between header items */
+  display: flex;
+  align-items: center;
 }
 
 /* Desktop Support Link */
 .nav-link.support-link {
-    color: #ffffff;
-    font-family: 'Hammersmith One', sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 25px;
-    text-decoration: none;
-    display: block; /* Visible by default on desktop */
+  color: #ffffff;
+  font-family: 'Hammersmith One', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  text-decoration: none;
+  margin-right: 74px;
 }
 
 .user-name {
-    color: #ffffff;
-    font-family: 'Hammersmith One', sans-serif;
-    font-weight: 400;
-    font-size: 27px;
-    line-height: 33.75px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 200px;
+  color: #ffffff;
+  font-family: 'Hammersmith One', sans-serif;
+  font-weight: 400; 
+  font-size: 27px;
+  line-height: 33.75px; 
+  margin-right: 16px; 
 }
 
-.site-header__avatar { /* Unified avatar class */
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
+.user-avatar {
+  width: 80px;
+  height: 80px; 
+  border-radius: 50%;
 }
 
-/* Hamburger menu (Hidden by default on desktop) */
-.hamburger {
-    display: none;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    /* margin-right: auto will be applied in media query */
-}
-
-/* Close button for mobile sidebar (Hidden by default) */
-.close-btn {
-    display: none;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 26px;
-    color: #ffffff; /* White for visibility on dark overlay */
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-/* --- Chat Interface Section (Main Content Area) --- */
 .chat-interface-section {
-    display: flex;
-    flex: 1; /* Allows this section to grow */
-    padding-top: 14px;
-    padding-left: 12px;
-    /* Apply the light blue gradient background to this section */
-    background: linear-gradient(0deg, #c7e0f9 25.16%, #c7e0f9 37.63%, #c7e0f9 43.69%, #7fc8fd 52.07%);
-    /* height: calc(982px - 119px); Removed fixed height */
+  display: flex;
+  padding-top: 14px;
+  padding-left: 12px;
+  height: calc(982px - 119px);
 }
 
 /* --- Sidebar Styles (Desktop Default) --- */
 .sidebar {
-    background-color: rgba(65, 89, 100, 0.3);
-    width: 347px;
-    /* height: 832px; height: 130vh; Removed fixed/vh height */
-    border-radius: 30px;
-    padding: 58px 0 50px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align text content to left */
-    justify-content: space-between; /* Space out items vertically */
-    flex-shrink: 0; /* Prevent shrinking if content is wide */
-    min-height: calc(100vh - 119px - 28px); /* Min height based on viewport - header - main-layout padding */
-    /* Add flex-grow to ensure it extends if chat area extends vertically */
-    flex-grow: 1;
+  background-color: rgba(65, 89, 100, 0.3);
+  width: 347px;
+  height: 832px;
+  border-radius: 30px;
+  padding: 58px 0 50px 0; 
+  display: flex;
+  flex-direction: column;
+  height: 130vh;
+  align-items: left;
+  justify-content: space-between;
 }
+
+
 
 .sidebar-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-grow: 1; /* Allows nav links to push footer down */
-}
-
-.sidebar-nav li { /* Changed from .sidebar-nav-item to li for correct targeting */
-    margin-bottom: 42px;
-}
-
-.sidebar-nav li:last-child {
-    margin-bottom: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .sidebar-nav-item {
   display: flex;
   align-items: center;
-  margin-bottom: 42px; 
+  margin-bottom: 42px;
   font-family: 'Hammersmith One', sans-serif;
   font-weight: 400;
   font-size: 29px;
@@ -161,14 +115,14 @@ body {
 }
 
 .sidebar-nav-item .nav-icon {
-    width: 28.75px;
-    height: 28.75px;
-    margin-right: 16.25px;
+  width: 28.75px; 
+  height: 28.75px;
+  margin-right: 16.25px;
 }
 
 .sidebar-nav-item a,
 .sidebar-footer-item span {
-  color: #0a3960; 
+  color: #0a3960;
   font-family: 'Hammersmith One', sans-serif;
   font-weight: 400;
   font-size: 29px;
@@ -180,9 +134,9 @@ body {
 .sidebar-footer-item {
   display: flex;
   align-items: center;
-  
+  text-decoration: none;
   font-family: 'Hammersmith One', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 29px; 
   line-height: 36.25px; 
   color: #0a3960;
@@ -194,555 +148,391 @@ body {
 }
 
 .sidebar-footer-item .nav-icon-large {
-    width: 52px;
-    height: 48px;
-    margin-right: 5px;
+  width: 52px; 
+  height: 48px; 
+  margin-right: 5px; 
 }
 
-/* --- Chat Area --- */
-.chat-area-outer {
-    background-color: rgba(255, 255, 255, 0.76);
-    width: 1070px;
-    height: 800px;
-    border-radius: 20px;
-    margin-left: 43px;
-    margin-top: 16px;
-    padding: 42px 38px 50px 38px;
-    display: flex; /* Make it a flex container to center inner content */
-    flex-direction: column;
+.chat-area-outer { 
+  background-color: rgba(255, 255, 255, 0.76); 
+  width: 1070px; 
+  height: 800px;
+  border-radius: 20px;
+  margin-left: 43px;
+  margin-top: 16px;
+  padding: 42px 38px 50px 38px;
 }
 
 .chat-area-inner {
-    background-color: #d0e7ed;
-    border-radius: 10px;
-    width: 100%;
-    height: 100%;
-    padding: 83px 81px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribute content vertically */
+  background-color: #d0e7ed; 
+  border-radius: 10px; 
+  width: 100%; 
+  height: 100%; 
+  padding: 83px 81px 30px; 
+  display: flex;
+  flex-direction: column;
 }
 
 .chat-title {
-    color: #000000;
-    font-family: 'Hammersmith One', sans-serif;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 40px;
-    margin: 0 0 31px 0;
+  color: #000000; 
+  font-family: 'Hammersmith One', sans-serif; 
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px; 
+  margin: 0 0 31px 0; 
 }
 
-.chat-messages {
-    flex-grow: 1; /* Allow messages area to take available space */
-    overflow-y: auto; /* Enable scrolling for messages */
-    margin-bottom: 20px; /* Space before input */
+.message-input-container { 
+  background-color: #ffffff; 
+  width: 497px;
+  height: 369px; 
+  border-radius: 20px; 
+  padding: 33px 35px; 
 }
 
-.message-input-container {
-    background-color: #ffffff;
-    width: 497px;
-    height: 369px;
-    border-radius: 20px;
-    padding: 33px 35px;
-    /* Moved input and textarea outside this container in HTML, so this class might be unused now */
+.message-input-area {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  background-color: transparent;
+  font-family: 'Hammersmith One', sans-serif; 
+  font-weight: 400;
+  font-size: 16px; 
+  line-height: 20px; 
+  color: #000000;
 }
-
-/* Styling for the input fields directly */
-input[type="text"][name="sender"],
-textarea.message-input-area {
-    width: 100%;
-    border: 1px solid #ccc; /* Added border for visibility */
-    border-radius: 10px;
-    padding: 10px 15px;
-    font-family: 'Hammersmith One', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    color: #000000;
-    margin-bottom: 15px; /* Space between input fields */
-}
-
-textarea.message-input-area {
-    min-height: 100px; /* Ensure textarea has a decent starting height */
-    resize: vertical; /* Allow vertical resizing */
-}
-
 
 .message-input-area::placeholder {
-    color: #a7b2bc;
-    font-family: 'Hammersmith One', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
+  color: #a7b2bc; 
+  font-family: 'Hammersmith One', sans-serif; 
+  font-weight: 400; 
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .chat-actions {
-    display: flex;
-    margin-top: 30px;
-    justify-content: flex-end; /* Align buttons to the right */
-    gap: 20px; /* Space between buttons */
+  display: flex;
+  margin-top: 30px; 
+  margin-left: 88px;
+  gap: 20px;
 }
 
 .button {
-    background-color: #303b49;
-    border-radius: 20px;
-    color: #ffffff;
-    font-family: 'Hammersmith One', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    border: none;
-    cursor: pointer;
-    height: 36px;
-    display: inline-flex;
+  background-color: #303b49;
+  border-radius: 20px; 
+  color: #ffffff; 
+  font-family: 'Hammersmith One', sans-serif; 
+  font-weight: 400; 
+  font-size: 16px;
+  line-height: 20px; 
+  border: none;
+  cursor: pointer;
+  height: 36px; 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px; 
+}
+
+.button-back {
+  width: 133px; 
+}
+
+.button-send {
+  width: 133px;
+  margin-left: 46px; 
+}
+
+@media (max-width: 1512px) {
+  .page-container {
+    width: 100%;
+    height: auto;
+    min-height: 982px;
+  }
+}
+@media (max-width: 1200px) {
+  .chat-interface-section {
+    flex-direction: column;
     align-items: center;
+    padding-left: 0; 
+  }
+  .sidebar {
+    width: 90%;
+    max-width: 347px; 
+    height: auto; 
+    margin-bottom: 20px;
+  }
+  .chat-area-outer {
+    width: 90%;
+    max-width: 1070px; 
+    margin-left: 0;
+    margin-top: 0; 
+    height: auto;
+  }
+   .chat-area-inner {
+    padding: 40px 30px;
+  }
+  .message-input-container {
+    width: 100%; 
+  }
+  .chat-actions {
+    margin-left: 0; 
     justify-content: center;
-    padding: 8px 20px; /* Adjusted padding for better button size */
+    flex-wrap: wrap; 
+  }
+  .button {
+    margin: 5px;
+  }
+  .button-send {
+    margin-left: 5px; 
+  }
 }
 
-.button-back, .button-send { /* Removed specific width, let padding define it */
-    width: auto;
+@media (max-width: 768px) { 
+  .site-header {
+    padding-right: 20px;
+    padding-left: 20px;
+    justify-content: space-between; 
+  }
+  .nav-link.support-link {
+    margin-right: 20px;
+  }
+  .user-name {
+    font-size: 20px; 
+  }
+  .user-avatar {
+    width: 60px;
+    height: 60px;
+  }
+  .sidebar {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .sidebar-nav-item, .sidebar-footer-item {
+    padding-left: 20px; 
+    font-size: 24px;
+  }
+  .sidebar-nav-item a, .sidebar-footer-item span {
+    font-size: 24px;
+  }
+  .chat-area-inner {
+    padding: 20px;
+  }
+  .chat-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .message-input-container {
+    height: 200px;
+    padding: 20px;
+  }
 }
 
-/* ==================================== */
-/* === Media Queries for Responsiveness === */
-/* ==================================== */
 
-/* Desktops to large Tablets (Hamburger appears, Support link moves to sidebar) */
-@media (max-width: 1260px) {
-    .site-header {
-        justify-content: space-between; /* Space out hamburger and user info */
-        padding: 15px 40px; /* Adjust header padding */
-        height: auto;
-        min-height: 90px;
-    }
 
-    .hamburger {
-        display: block; /* Hamburger becomes visible */
-        margin-right: auto; /* Push header-nav to the right */
-        order: -1; /* Place hamburger first in order */
-    }
 
-    .header-nav {
-        flex-grow: 1; /* Allow nav to take remaining space */
-        justify-content: flex-end; /* Push content to the right */
-        gap: 15px; /* Adjust gap for smaller screens */
-    }
-
-    /* Hide desktop support link, as it's now in the sidebar */
-    .nav-link.support-link {
-        display: none;
-    }
-
-    .user-name {
-        font-size: 24px;
-        max-width: 150px;
-    }
-
-    .site-header__avatar {
-        width: 70px;
-        height: 70px;
-    }
-
-    .chat-interface-section {
-        flex-direction: column; /* Stack sidebar and content */
-        align-items: center; /* Center them */
-        gap: 25px; /* Reduce gap */
-        padding: 20px 16px; /* Adjust padding */
-    }
-
-    /* Sidebar becomes overlay */
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: -100%; /* Hidden off-screen */
-        width: 70%; /* Adjust overlay width */
-        max-width: none; /* Override desktop max-width */
-        height: 100%;
-        background-color: rgba(65, 89, 100, 0.95); /* Darker overlay */
-        z-index: 1000;
-        transition: left 0.3s ease;
-        padding-top: 60px; /* Space for close button */
-        border-radius: 0; /* No border-radius for full height overlay */
-        flex-grow: 0; /* Prevent growing when fixed */
-        min-height: auto; /* Remove min-height for overlay */
-    }
-
-    .sidebar.active {
-        left: 0; /* Show sidebar */
-    }
-
-    .close-btn {
-        display: block; /* Show close button */
-    }
-
-    .sidebar-nav ul {
-        flex-direction: column; /* Stack sidebar items vertically */
-        align-items: flex-start; /* Align left */
-        gap: 30px; /* Space between links */
-        padding-left: 40px; /* Indent sidebar items */
-    }
-
-    .sidebar-nav li a { /* Targeting the <a> tag */
-        padding-left: 0; /* Reset original padding */
-    }
-
-    .sidebar-item-text {
-        font-size: 24px;
-    }
-
-    .sidebar-footer-item {
-        padding-left: 40px; /* Indent footer item */
-    }
-
-    .chat-area-outer {
-        width: 90%; /* Make chat area wider */
-        max-width: 900px; /* Max width for larger tablets */
-        margin-left: 0; /* Center it */
-        margin-top: 0;
-        height: auto; /* Allow height to adjust */
-        padding: 30px; /* Adjust padding */
-    }
-
-    .chat-area-inner {
-        padding: 30px; /* Adjust padding */
-    }
-
-    .chat-title {
-        font-size: 30px;
-        line-height: 38px;
-    }
-
-    input[type="text"][name="sender"],
-    textarea.message-input-area {
-        max-width: 100%; /* Ensure inputs don't exceed container width */
-    }
-
-    .chat-actions {
-        justify-content: center; /* Center buttons */
-    }
+@media (max-width: 1200px) {
+  .main-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .sidebar {
+    width: 90%;
+    max-width: 400px; 
+    height: auto; 
+    padding: 30px;
+  }
+  .sidebar-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .sidebar-nav li {
+    margin-bottom: 0;
+  }
+  .sidebar-footer-link {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .form-area-wrapper {
+    width: 90%;
+    max-width: 700px;
+    margin-top: 0;
+  }
+  .form-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .form-mascot-image {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+  .input-field, .textarea-field, .custom-select-lookalike, .submit-button, .image-upload-box {
+    width: 100%;
+  }
+  .reporting-group {
+    width: 100%;
+  }
 }
 
-/* Tablets (max-width: 768px) */
 @media (max-width: 768px) {
-    .site-header {
-        padding: 10px 20px;
-        min-height: 80px;
-    }
-
-    .user-name {
-        font-size: 20px;
-        max-width: 120px;
-    }
-
-    .site-header__avatar {
-        width: 60px;
-        height: 60px;
-    }
-
-    .hamburger {
-        font-size: 28px;
-    }
-
-    .sidebar {
-        width: 80%; /* Adjust sidebar width for smaller tablets */
-        padding-top: 50px;
-    }
-
-    .close-btn {
-        font-size: 24px;
-        top: 15px;
-        right: 15px;
-    }
-
-    .sidebar-nav ul {
-        gap: 25px;
-        padding-left: 25px; /* Reduce indent */
-    }
-
-    .sidebar-item-text {
-        font-size: 22px;
-    }
-
-    .sidebar-footer-item {
-        padding-left: 25px;
-    }
-
-    .chat-area-outer {
-        width: 95%; /* Almost full width on tablets */
-        max-width: 700px; /* Limit max width */
-        padding: 20px;
-    }
-
-    .chat-area-inner {
-        padding: 20px;
-    }
-
-    .chat-title {
-        font-size: 26px;
-        margin-bottom: 20px;
-    }
+  .site-header {
+    padding: 0 20px;
+    height: auto;
+    min-height: 80px;
+  }
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+  .header-link {
+    margin-right: 0;
+  }
+  .user-name {
+    font-size: 22px;
+  }
+  .user-avatar {
+    width: 60px;
+    height: 60px;
+  }
+  .form-title {
+    font-size: 28px;
+  }
+  .form-area-outer-bg {
+    padding: 20px;
+  }
+  .form-area-inner-bg {
+    padding: 30px 20px;
+  }
+  .sidebar-nav a, .sidebar-footer-link a {
+    font-size: 24px;
+  }
+  .submit-button {
+    font-size: 24px;
+    height: 60px;
+  }
 }
 
-/* Larger Phones (max-width: 600px) */
-@media (max-width: 600px) {
-    .site-header {
-        padding: 8px 15px;
-        min-height: 70px;
-    }
 
-    .user-name {
-        font-size: 18px;
-        max-width: 100px;
-    }
-
-    .site-header__avatar {
-        width: 55px;
-        height: 55px;
-    }
-
-    .hamburger {
-        font-size: 26px;
-    }
-
-    .sidebar {
-        width: 85%; /* Make sidebar slightly wider on smaller phones */
-        padding-top: 45px;
-    }
-
-    .sidebar-nav ul {
-        gap: 20px;
-        padding-left: 20px;
-    }
-
-    .sidebar-item-text {
-        font-size: 20px;
-    }
-
-    .sidebar-footer-item {
-        padding-left: 20px;
-    }
-
-    .chat-area-outer {
-        padding: 15px;
-    }
-
-    .chat-area-inner {
-        padding: 15px;
-    }
-
-    .chat-title {
-        font-size: 22px;
-        margin-bottom: 15px;
-    }
-
-    textarea.message-input-area {
-        min-height: 80px;
-    }
-
-    .chat-actions {
-        flex-wrap: wrap; /* Allow buttons to wrap */
-        gap: 10px; /* Smaller gap */
-        margin-top: 20px;
-    }
-
-    .button {
-        padding: 8px 15px;
-        font-size: 14px;
-        height: 32px;
-    }
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  margin-right: auto;
 }
 
-/* Medium Phones (max-width: 550px) */
-@media (max-width: 550px) {
-    .site-header {
-        padding: 8px 10px;
-    }
-
-    .user-name {
-        font-size: 16px;
-        max-width: 90px;
-    }
-
-    .site-header__avatar {
-        width: 50px;
-        height: 50px;
-    }
-
-    .hamburger {
-        font-size: 24px;
-    }
-
-    .sidebar {
-        width: 90%; /* Wider sidebar for smaller screens */
-        padding-top: 40px;
-    }
-
-    .sidebar-nav ul {
-        gap: 18px;
-        padding-left: 15px;
-    }
-
-    .sidebar-item-text {
-        font-size: 18px;
-    }
-
-    .sidebar-footer-item {
-        padding-left: 15px;
-    }
-
-    .chat-title {
-        font-size: 20px;
-    }
-
-    .chat-messages {
-        font-size: 14px;
-    }
+.close-btn {
+  display: none;
+  font-size: 26px;
+  color: #0a3960;
+  text-align: right;
+  margin-right: 20px;
+  cursor: pointer;
 }
 
-/* Small Phones (max-width: 480px) */
-@media (max-width: 480px) {
-    .site-header {
-        padding: 6px 8px;
-        min-height: 60px;
-    }
-
-    .user-name {
-        font-size: 15px;
-        max-width: 70px;
-    }
-
-    .site-header__avatar {
-        width: 45px;
-        height: 45px;
-    }
-
-    .hamburger {
-        font-size: 22px;
-    }
-
-    .sidebar {
-        width: 95%; /* Almost full width for very small screens */
-        padding-top: 35px;
-    }
-
-    .sidebar-nav ul {
-        gap: 16px;
-        padding-left: 10px;
-    }
-
-    .sidebar-item-text {
-        font-size: 16px;
-    }
-
-    .sidebar-footer-item {
-        padding-left: 10px;
-    }
-
-    .chat-title {
-        font-size: 18px;
-    }
-
-    textarea.message-input-area {
-        min-height: 70px;
-    }
-
-    .button {
-        padding: 6px 12px;
-        font-size: 13px;
-        height: 30px;
-    }
+/* Mobile View */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .sidebar-nav ul {
+  display: flex;
+  flex-direction: column;  /* STACK vertically */
+  align-items: flex-start; /* Align left if needed */
+  gap: 40px;               /* Add space between links */
 }
 
-/* Very Small Phones (max-width: 450px) */
-@media (max-width: 450px) {
-    .user-name {
-        font-size: 14px;
-        max-width: 65px;
-    }
-    .chat-title {
-        font-size: 16px;
-    }
-    .chat-messages {
-        font-size: 13px;
-    }
+.sidebar-nav li {
+  margin-bottom: 0;  /* No extra margin, gap handles it */
 }
 
-/* Extra Small Phones (max-width: 400px) */
-@media (max-width: 400px) {
-    .site-header {
-        padding: 5px 5px;
-        min-height: 55px;
-    }
-    .user-name {
-        font-size: 13px;
-        max-width: 60px;
-    }
-    .site-header__avatar {
-        width: 40px;
-        height: 40px;
-    }
-    .hamburger {
-        font-size: 20px;
-    }
-    .sidebar-nav ul {
-        gap: 14px;
-    }
-    .sidebar-item-text {
-        font-size: 15px;
-    }
-    .chat-title {
-        font-size: 15px;
-    }
-    .chat-messages {
-        font-size: 12px;
-    }
+
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(65, 89, 100, 0.95);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding-top: 40px;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .close-btn {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .main-layout {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  .form-area-wrapper {
+    min-width: unset;
+    width: 100%;
+  }
 }
 
-/* Tiny Phones (max-width: 350px) */
-@media (max-width: 350px) {
-    .user-name {
-        font-size: 12px;
-        max-width: 55px;
-    }
-    .site-header__avatar {
-        width: 35px;
-        height: 35px;
-    }
-    .hamburger {
-        font-size: 18px;
-    }
-    .sidebar-item-text {
-        font-size: 14px;
-    }
-    .chat-title {
-        font-size: 14px;
-    }
-    .chat-messages {
-        font-size: 11px;
-    }
+
+@media screen and (max-width: 1260px) {
+  .hamburger {
+    display: block;
+  }
+  .sidebar-nav ul {
+  display: flex;
+  flex-direction: column;  /* STACK vertically */
+  align-items: flex-start; /* Align left if needed */
+  gap: 40px;               /* Add space between links */
 }
 
-/* Smallest Phones (max-width: 300px) */
-@media (max-width: 300px) {
-    .user-name {
-        font-size: 11px;
-        max-width: 50px;
-    }
-    .site-header__avatar {
-        width: 30px;
-        height: 30px;
-    }
-    .hamburger {
-        font-size: 16px;
-    }
-    .sidebar-item-text {
-        font-size: 13px;
-    }
-    .chat-title {
-        font-size: 13px;
-    }
-    .chat-messages {
-        font-size: 10px;
-    }
+.sidebar-nav li {
+  margin-bottom: 0;  /* No extra margin, gap handles it */
+}
+
+
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(65, 89, 100, 0.95);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding-top: 40px;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .close-btn {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .main-layout {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  .form-area-wrapper {
+    min-width: unset;
+    width: 100%;
+  }
 }

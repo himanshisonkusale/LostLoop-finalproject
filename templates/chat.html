@@ -20,9 +20,11 @@
 
 <section id="section-chat-interface" class="chat-interface-section">
     <aside class="sidebar" id="sidebar">
-        <div class="close-btn" onclick="toggleSidebar()">✕</div> <nav class="sidebar-nav">
+        <div class="close-btn" onclick="toggleSidebar()">✕</div> 
+        <nav class="sidebar-nav">
             <ul>
-                <li> <a href="{{ url_for('home') }}" class="sidebar-nav-item">
+                <li> 
+                    <a href="{{ url_for('home') }}" class="sidebar-nav-item">
                         <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Home Icon" class="nav-icon">
                         <span>Home</span>
                     </a>
@@ -42,8 +44,7 @@
             </ul>
         </nav>
         <div class="sidebar-footer-item">
-            <a href="{{ url_for('homescreen') }}" class="sidebar-nav-item how-it-helps">
-                <img src="{{ url_for('static', filename='images/Screenshot 2025-06-07 034101 1.png') }}" alt="How It Helps Icon" class="nav-icon-large">
+            <a href="{{ url_for('homescreen') }}" class="sidebar-nav-item how-it-helps"> <img src="{{ url_for('static', filename='images/Screenshot 2025-06-07 034101 1.png') }}" alt="How It Helps Icon" class="nav-icon-large">
                 <span>How It Helps</span>
             </a>
         </div>

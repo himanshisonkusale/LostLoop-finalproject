@@ -133,6 +133,7 @@ body {
   line-height: 36.25px;
   display: flex;
   align-items: center;
+  font-weight: 700;
 }
 
 .nav-icon {
