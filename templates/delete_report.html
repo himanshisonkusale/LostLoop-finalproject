@@ -3,6 +3,7 @@
 
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Trispace&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <title>Delete report</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/delete_report.css') }}">
@@ -10,68 +11,69 @@
 </head>
 
 <body>
-  <section id="section-header">
-    <div class="page-wrapper">
+  <div class="page-wrapper">
+    <section id="section-header">
       <header class="site-header">
         <div class="hamburger" onclick="toggleSidebar()">☰</div>
         <nav class="header-nav">
           <a href="{{ url_for('support') }}" class="header-nav-item">Support</a>
         </nav>
         <div class="user-info">
-          <h2 style="color: #FFFFFF; font-size: 19px;">{{username}} </h2>
+          <h2 class="user-name">{{username}}</h2>
           <img src="{{ url_for('static', filename='images/Ellipse 2.svg') }}" alt="User Avatar"
-            class="site-header__avatar">
+            class="site-header__avatar user-avatar">
         </div>
       </header>
-    </div>
-  </section>
+    </section>
 
-  <section id="section-main" class="main-content-area-wrapper">
-    <aside class="sidebar" id="sidebar" style="height:500px">
-      <div class="close-btn" onclick="toggleSidebar()">✕</div> <!-- Only visible on small screens -->
-      <ul style = "list-style : none;">
-      <li><a href="{{ url_for('home') }}" class="sidebar-nav-item">
-        <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Home icon" class="nav-icon">
-        <span>Home</span>
-      </a></li>
-      <li><a href="{{ url_for('search') }}" class="sidebar-nav-item">
-        <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Search icon"
-          class="nav-icon">
-        <span>Search</span>
-      </a></li>
-      <li><a href="{{ url_for('support') }}" class="sidebar-nav-item">
-        <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Support icon"
-          class="nav-icon">
-        <span>Support</span>
-      </a></li>
-      </ul>
-      </nav>
+    <section id="section-main" class="main-content-area-wrapper">
+      <aside class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="toggleSidebar()">✕</div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="{{ url_for('home') }}" class="sidebar-nav-item">
+                <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Home icon" class="nav-icon">
+                <span>Home</span>
+              </a></li>
+            <li><a href="{{ url_for('search') }}" class="sidebar-nav-item">
+                <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Search icon"
+                  class="nav-icon">
+                <span>Search</span>
+              </a></li>
+            <li><a href="{{ url_for('support') }}" class="sidebar-nav-item">
+                <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Support icon"
+                  class="nav-icon">
+                <span>Support</span>
+              </a></li>
+          </ul>
+        </nav>
 
-      <a href="{{ url_for('homescreen') }}" class="sidebar-footer-link">
-        <img src="{{ url_for('static', filename='images/Screenshot 2025-06-07 034101 1.png') }}" alt="Information icon"
-          class="nav-icon-large">
-        <span>How It Helps</span>
-      </a>
-    </aside>
+        <a href="{{ url_for('homescreen') }}" class="sidebar-footer-link">
+          <img src="{{ url_for('static', filename='images/Screenshot 2025-06-07 034101 1.png') }}" alt="Information icon"
+            class="nav-icon-large">
+          <span>How It Helps</span>
+        </a>
+      </aside>
 
-    <main class="content-panel">
-      <div class="dialog-outer-container">
-        <div class="dialog-inner-box">
-          <p class="dialog-question">Do you really wish to delete your report?</p>
+      <main class="content-panel">
+        <div class="dialog-outer-container">
+          <div class="dialog-inner-box">
+            <p class="dialog-question">Do you really wish to delete your report?</p>
 
-          <div class="dialog-buttons">
-            <form method="POST" action="{{ url_for('delete_report', report_id=report_id) }}">
-              <button type="submit" class="button button-yes">YES</button>
-            </form>
+            <div class="dialog-buttons">
+              <form method="POST" action="{{ url_for('delete_report', report_id=report_id) }}">
+                <button type="submit" class="button button-yes">YES</button>
+              </form>
 
-            <form method="GET" action="{{ url_for('item_details', item_id=report_id) }}">
-              <button type="submit" class="button button-no">NO</button>
-            </form>
+              <form method="GET" action="{{ url_for('item_details', item_id=report_id) }}">
+                <button type="submit" class="button button-no">NO</button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
-  </section>
+      </main>
+    </section>
+  </div>
   <script>
     function toggleSidebar() {
       const sidebar = document.getElementById("sidebar");

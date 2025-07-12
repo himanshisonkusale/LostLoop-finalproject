@@ -1,33 +1,5 @@
 [
   {
-    "id": 17,
-    "type": "lost",
-    "description": "",
-    "location": "",
-    "reporter_name": "himanshi",
-    "reporter_username": "himanshi.son",
-    "reporter_email": null,
-    "image": "",
-    "status": "Unclaimed",
-    "messages": [],
-    "latitude": 22.7196,
-    "longitude": 75.8577
-  },
-  {
-    "id": 18,
-    "type": "lost",
-    "description": "",
-    "location": "nagpur",
-    "reporter_name": "himanshi",
-    "reporter_username": "himanshi.son",
-    "reporter_email": "himanshi.sonkusale@gmail.com",
-    "image": "",
-    "status": "Unclaimed",
-    "messages": [],
-    "latitude": 22.7196,
-    "longitude": 75.8577
-  },
-  {
     "id": 19,
     "type": "lost",
     "description": "",

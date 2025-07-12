@@ -231,19 +231,26 @@ body {
   }
 
   .site-header {
-    flex-direction: column;
+    flex-direction: row; /* Keep as row for hamburger */
+    justify-content: space-between; /* Distribute items */
     height: auto;
     padding: 20px;
-    text-align: center;
+    text-align: left; /* Align text left */
   }
 
   .header-nav {
-    flex-direction: column;
+    flex-direction: row; /* Keep as row for header links */
     gap: 10px;
+    align-items: center; /* Align items vertically */
   }
 
   .user-avatar {
-    margin: 10px auto 0;
+    margin: 0; /* Remove auto margin */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger */
+    margin-right: 20px; /* Space from other header items */
   }
 }
 
@@ -293,7 +300,24 @@ body {
   .reporting-group {
     width: 100%;
   }
+
+  /* Hamburger specific adjustments for larger mobile/tablet view */
+  .site-header {
+    flex-direction: row; /* Keep as row for hamburger */
+    justify-content: space-between; /* Distribute items */
+    padding: 20px;
+  }
+
+  .hamburger {
+    display: block; /* Ensure hamburger is visible */
+    margin-right: auto; /* Push hamburger to the left */
+  }
+
+  .header-nav {
+    margin-left: auto; /* Push header nav to the right */
+  }
 }
+
 
 @media (max-width: 768px) {
   .site-header {
@@ -336,11 +360,11 @@ body {
 
 
 .hamburger {
-  display: none;
+  display: none; /* Hidden by default on desktop */
   font-size: 30px;
   color: white;
   cursor: pointer;
-  margin-right: auto;
+  /* margin-right: auto; Removed for better control in media queries */
 }
 
 .close-btn {
@@ -352,24 +376,30 @@ body {
   cursor: pointer;
 }
 
-/* Mobile View */
+/* Mobile View (smaller screens) */
 @media screen and (max-width: 768px) {
   .hamburger {
-    display: block;
+    display: block; /* Show hamburger */
+    order: -1; /* Place hamburger at the beginning of the flex container */
+    margin-right: 20px; /* Space between hamburger and other header items */
+  }
+  .site-header .header-nav {
+    display: none; /* Hide default nav items when sidebar is active or hamburger is shown */
+  }
+  .site-header {
+    justify-content: flex-start; /* Align items to the start */
   }
   .sidebar-nav ul {
-  display: flex;
-  flex-direction: column;  /* STACK vertically */
-  align-items: flex-start; /* Align left if needed */
-  gap: 40px;               /* Add space between links */
-}
+    display: flex;
+    flex-direction: column;   /* STACK vertically */
+    align-items: flex-start; /* Align left if needed */
+    gap: 40px;              /* Add space between links */
+  }
 
-.sidebar-nav li {
-  margin-bottom: 0;  /* No extra margin, gap handles it */
-}
+  .sidebar-nav li {
+    margin-bottom: 0;   /* No extra margin, gap handles it */
+  }
 
-
-  
   .sidebar {
     position: fixed;
     top: 0;
@@ -389,6 +419,7 @@ body {
   .close-btn {
     display: block;
     margin-bottom: 20px;
+    color: white; /* Ensure close button is visible */
   }
 
   .main-layout {
@@ -403,23 +434,31 @@ body {
 }
 
 
-@media screen and (max-width: 1260px) {
+/* Tablet View (larger mobile/smaller tablet screens) */
+@media screen and (max-width: 1260px) and (min-width: 769px) {
   .hamburger {
-    display: block;
+    display: block; /* Show hamburger */
+    order: -1; /* Place hamburger at the beginning of the flex container */
+    margin-right: 20px; /* Space between hamburger and other header items */
   }
+  .site-header .header-nav {
+    display: none; /* Hide default nav items when sidebar is active or hamburger is shown */
+  }
+  .site-header {
+    justify-content: flex-start; /* Align items to the start */
+  }
+
   .sidebar-nav ul {
-  display: flex;
-  flex-direction: column;  /* STACK vertically */
-  align-items: flex-start; /* Align left if needed */
-  gap: 40px;               /* Add space between links */
-}
+    display: flex;
+    flex-direction: column;   /* STACK vertically */
+    align-items: flex-start; /* Align left if needed */
+    gap: 40px;              /* Add space between links */
+  }
 
-.sidebar-nav li {
-  margin-bottom: 0;  /* No extra margin, gap handles it */
-}
+  .sidebar-nav li {
+    margin-bottom: 0;   /* No extra margin, gap handles it */
+  }
 
-
-  
   .sidebar {
     position: fixed;
     top: 0;
@@ -439,6 +478,7 @@ body {
   .close-btn {
     display: block;
     margin-bottom: 20px;
+    color: white; /* Ensure close button is visible */
   }
 
   .main-layout {
@@ -450,8 +490,6 @@ body {
     min-width: unset;
     width: 100%;
   }
-
-  
 }
 
 
@@ -465,4 +503,3 @@ body {
   margin-top: auto;
   box-sizing: border-box;
 }
-
