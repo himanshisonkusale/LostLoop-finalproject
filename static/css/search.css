@@ -134,7 +134,7 @@ button {
 /* --- Main Layout --- */
 .main-layout {
     display: flex;
-    padding-top: 112px;
+    padding-top: 50px;
     padding-left: 12px;
     padding-right: 12px;
     padding-bottom: 58px;
