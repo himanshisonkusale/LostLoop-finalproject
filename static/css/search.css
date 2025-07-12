@@ -27,7 +27,7 @@ button {
 .page-wrapper {
     max-width: 1512px;
     margin: 0 auto;
-    overflow: hidden;
+    overflow: hidden; /* Ensures no horizontal scroll from content going off-screen */
 }
 
 /* --- Header Styles (Desktop Default) --- */
@@ -36,37 +36,42 @@ button {
     height: 119px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 60px;
+    justify-content: space-between; /* Distributes space between items */
+    padding: 0 60px; /* Ample padding on sides for desktop */
     position: relative;
+    width: 100%; /* Ensure the header itself doesn't cause overflow */
 }
 
 .header-nav {
     display: flex;
     align-items: center;
-    flex: 1; /* Allows it to take available space */
-    justify-content: flex-start; /* Aligns hamburger to the left */
+    flex-shrink: 0; /* Prevent it from shrinking */
+    /* On desktop, this will be empty or hold only the hamburger (which is hidden) */
 }
 
-.header-nav-item {
+.header-nav-item { /* General style for header nav items if any */
     font-family: 'Hammersmith One', sans-serif;
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
     color: #ffffff;
     text-decoration: none;
+    margin-left: 1000px;
+    /* REMOVED: margin-left: 1000px; - This was the problem causing overflow */
 }
 
 /* User Info Section: Contains Support, Username, and Avatar */
 .user-info {
     display: flex;
     align-items: center;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevent it from shrinking too much */
     gap: 20px; /* Space between Support, Username, and Avatar */
+    justify-content: flex-end; /* Aligns contents to the right within its available space */
+    flex-grow: 1; /* Allows user-info to grow and push items to the right when hamburger is on left */
 }
 
 /* Desktop support link - visible by default on large screens */
-.header-support-link-desktop {
+#desktop-support-link { /* Targeting by ID as it's unique */
     display: block; /* Default: visible on desktop */
     font-family: 'Hammersmith One', sans-serif;
     font-weight: 400;
@@ -76,9 +81,9 @@ button {
     text-decoration: none;
 }
 
-/* Mobile support link - hidden by default, shown in sidebar on small screens */
-.sidebar-support-link-mobile {
-    /* display: none; Default: hidden */
+/* Mobile support link - hidden by default */
+#mobile-support-link { /* Targeting by ID */
+    display: none; /* Default: hidden on desktop */
 }
 
 .user-name-header { /* Class for the username h2 */
@@ -88,6 +93,10 @@ button {
     line-height: 33.75px;
     color: #ffffff;
     margin: 0; /* Remove default margin from h2 */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    max-width: 200px; /* Limit width to prevent overflow on very small screens */
 }
 
 .site-header__avatar {
@@ -95,6 +104,7 @@ button {
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
+    flex-shrink: 0; /* Prevent avatar from shrinking */
 }
 
 /* Hamburger menu (hidden by default on desktop) */
@@ -103,6 +113,7 @@ button {
     font-size: 30px;
     color: white;
     cursor: pointer;
+    /* margin-right: 20px; This margin will be applied when it's displayed in media queries */
 }
 
 /* Close button for mobile sidebar (hidden by default) */
@@ -158,9 +169,8 @@ button {
     margin: 0;
 }
 
-/* Ensure sidebar nav items (Home, Search, Support) are always displayed as flex when in sidebar */
 .sidebar-nav-item {
-    display: flex; /* Ensure display is always flex for the items */
+    display: flex;
     align-items: center;
     margin-bottom: 42px;
     font-family: 'Hammersmith One', sans-serif;
@@ -257,7 +267,13 @@ button {
     line-height: 30px;
     color: #ffffff;
     text-decoration: none;
+    white-space: nowrap; /* Prevent text wrapping on smaller buttons */
 }
+
+.reset-link {
+    background-color: #555; /* Slightly different color for reset, or match apply */
+}
+
 
 /* --- Results Section --- */
 .results-section {
@@ -378,33 +394,26 @@ button {
     .site-header {
         padding: 15px 40px; /* Adjust header padding */
         height: auto;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .header-nav {
-        flex: unset; /* Remove flex-grow */
-        padding-right: 0;
     }
 
     .hamburger {
         display: block; /* Hamburger becomes visible */
-        margin-right: 0; /* No margin needed here, as Support is in user-info */
+        margin-right: 15px; /* Add some space next to hamburger */
     }
 
-    /* Support link and user info remain in user-info div */
+    /* Desktop Support link visible on these screens */
+    #desktop-support-link {
+        display: block;
+        font-size: 18px; /* Slightly smaller font */
+    }
+
     .user-info {
         gap: 15px; /* Adjust gap for smaller screens */
     }
 
-    .header-support-link-desktop {
-        display: block; /* Still show desktop support link on these screens */
-        font-size: 18px; /* Slightly smaller font */
-    }
-
     .user-name-header {
         font-size: 24px;
+        max-width: 150px; /* Constrain width for potentially smaller screens */
     }
 
     .site-header__avatar {
@@ -427,10 +436,10 @@ button {
         max-width: 400px;
         height: auto; /* Allow sidebar height to adjust */
         padding: 30px;
-        /* For 1200px and below, sidebar acts as a block element within main-layout */
         position: static; /* Reset from fixed for mobile */
         left: auto; /* Reset */
         top: auto; /* Reset */
+        border-radius: 30px; /* Keep border-radius for block-level sidebar */
     }
 
     .sidebar-nav ul {
@@ -443,6 +452,11 @@ button {
     .sidebar-nav-item {
         font-size: 24px;
         margin-bottom: 0;
+    }
+
+    /* Mobile support link remains hidden on these screens */
+    #mobile-support-link {
+        display: none;
     }
 
     .sidebar-footer-link {
@@ -515,22 +529,30 @@ button {
         padding: 10px 20px;
     }
 
-    .header-nav {
-        /* No flex-grow on header-nav, just contains hamburger */
-        flex: unset;
-    }
-
+    /* Hamburger is explicitly displayed */
     .hamburger {
-        display: block; /* Ensure hamburger is visible */
+        display: block;
+        margin-right: 0; /* No extra margin here */
     }
 
-    .header-support-link-desktop {
-        /* display: none; Hide desktop support link */
+    /* Desktop Support link hides */
+    #desktop-support-link {
+        display: none;
     }
 
-    /* Support link is shown in sidebar for mobile/tablet */
-    .sidebar-support-link-mobile {
-        display: flex; /* Show support link in sidebar */
+    /* Mobile Support link shows */
+    #mobile-support-link {
+        display: flex; /* Use flex to align icon and text */
+    }
+
+    .user-name-header {
+        font-size: 22px;
+        max-width: 120px; /* Further constrain for tablets */
+    }
+
+    .site-header__avatar {
+        width: 60px;
+        height: 60px;
     }
 
     /* Mobile sidebar positioning (full screen overlay for smaller devices) */
@@ -545,6 +567,9 @@ button {
         transition: left 0.3s ease;
         padding: 40px 20px;
         flex-direction: column;
+        border-radius: 0; /* Remove border-radius for full height overlay */
+        /* Ensure sidebar content aligns well */
+        justify-content: space-between; /* Pushes footer to bottom */
     }
 
     .sidebar.active {
@@ -569,7 +594,6 @@ button {
     }
 
     .sidebar-nav-item {
-        /* Ensure sidebar nav items (Home, Search, Support) are always displayed as flex */
         display: flex;
         font-size: 24px;
         margin-bottom: 0;
@@ -586,30 +610,21 @@ button {
     .site-header {
         padding: 10px 20px;
         height: auto;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .header-nav {
-        /* This div now only contains the hamburger */
-        flex: unset;
-        width: auto;
     }
 
     .hamburger {
-        margin-right: 0; /* No extra margin here */
+        display: block;
     }
 
     .user-info {
-        /* User info needs to take up remaining space and justify content */
         justify-content: flex-end;
-        flex-grow: 1;
+        flex-grow: 1; /* Allow it to take available space */
         gap: 10px; /* Smaller gap for phones */
     }
 
     .user-name-header {
         font-size: 22px;
+        max-width: 100px; /* Further constrain for phones */
     }
 
     .site-header__avatar {
@@ -700,6 +715,7 @@ button {
     .user-name-header {
         font-size: 20px;
         margin-right: 10px;
+        max-width: 90px; /* Adjust for larger phones */
     }
 
     .site-header__avatar {
@@ -756,6 +772,9 @@ button {
         height: 32px;
         font-size: 12px;
     }
+    .header-nav-item { /* This was moved out of nested media query */
+        margin-left: 200px;
+    }
 }
 
 /* Medium Phones (max-width: 480px) */
@@ -770,6 +789,7 @@ button {
 
     .user-name-header {
         font-size: 18px;
+        max-width: 80px; /* Adjust for medium phones */
     }
 
     .site-header__avatar {
@@ -838,7 +858,10 @@ button {
         height: 28px;
         font-size: 11px;
     }
-}
+    .header-nav-item { /* This was moved out of nested media query */
+        margin-left: 200px;
+    }
+} /* CORRECTED: This closing bracket now correctly ends the 480px media query */
 
 /* Small Phones (max-width: 370px) */
 @media (max-width: 370px) {
@@ -848,6 +871,7 @@ button {
 
     .user-name-header {
         font-size: 16px;
+        max-width: 70px; /* Adjust for small phones */
     }
 
     .site-header__avatar {
@@ -920,8 +944,8 @@ button {
         height: 25px;
         font-size: 10px;
     }
-    .header-support-link-desktop{
-      margin-left:30px;
+    .header-nav-item { /* This was moved out of nested media query */
+        margin-left: 200px;
     }
 }
 
@@ -935,6 +959,7 @@ button {
     }
     .user-name-header {
         font-size: 14px;
+        max-width: 60px; /* Further constrain for extra small phones */
     }
     .site-header__avatar {
         height: 35px;
@@ -987,7 +1012,7 @@ button {
         height: 22px;
         font-size: 8px;
     }
-    .header-support-link-desktop{
-      margin-top:20px;
+    .header-nav-item { /* This was moved out of nested media query */
+        margin-left: 200px;
     }
 }
