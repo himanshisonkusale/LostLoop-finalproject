@@ -61,6 +61,7 @@ button {
 }
 
 /* User Info Section: Contains Support, Username, and Avatar */
+/* User Info Section: Contains Support, Username, and Avatar */
 .user-info {
     display: flex;
     align-items: center;
@@ -271,7 +272,7 @@ button {
 }
 
 .reset-link {
-    background-color: #555; /* Slightly different color for reset, or match apply */
+    background-color: #303b49; /* Slightly different color for reset, or match apply */
 }
 
 

@@ -133,6 +133,11 @@ body {
   display: flex;
   align-items: center;
   text-decoration: none;
+  color: #004080;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px;
+  justify-content: center;
   color: #0a3960;
   margin-top: auto; /* Pushes to the bottom of the sidebar */
   padding-left: 50px; /* Indent for footer link */
@@ -207,6 +212,231 @@ body {
 .button:hover {
   opacity: 0.9;
 }
+
+
+.site-header {
+  width: 100vw;
+  background: linear-gradient(to right, #003366, #004080);
+  height: 119px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  /* less padding for mobile */
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1000;
+}
+
+
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: right;
+  padding-right: 40px;
+}
+
+.header-nav-item {
+  font-family: 'Hammersmith One', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-name {
+  font-family: 'Hammersmith One', sans-serif;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 33.75px;
+  color: #ffffff;
+  margin-right: 16px;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+}
+
+
+.main-layout {
+  display: flex;
+  padding-top: 112px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 58px;
+  gap: 132px;
+}
+
+.sidebar {
+  background-color: rgba(65, 89, 100, 0.3);
+  border-radius: 30px;
+  width: 347px;
+  height: 200vh;
+  padding: 56px 0 50px 0px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebar-nav {
+  flex-grow: 1;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 42px;
+  font-family: 'Hammersmith One', sans-serif;
+  font-weight: 700;
+  font-size: 29px;
+  line-height: 36.25px;
+  color: #0a3960;
+}
+
+.sidebar-nav-item:last-child {
+  margin-bottom: 0;
+}
+
+
+.sidebar-nav-item .nav-icon {
+  width: 28.75px;
+  height: 28.75px;
+  margin-right: 16px;
+  margin-left: 14px;
+}
+
+.sidebar-footer-link {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  font-family: 'Hammersmith One', sans-serif;
+  font-weight: 700;
+  font-size: 29px;
+  line-height: 36.25px;
+  color: #0a3960;
+}
+
+.sidebar-footer-link .nav-icon-large {
+  width: 52px;
+  height: 48px;
+  margin-right: 4px;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+  .dialog-outer-container {
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+
+  .dialog-question {
+    font-size: 14px;
+  }
+
+  .button {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+}
+
+
+
+
+
+@media (max-width: 480px) {
+  .content-panel {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dialog-outer-container {
+
+    max-width: 90vw;
+    margin: 0 auto;
+
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .sidebar {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    padding: 30px;
+  }
+
+  .sidebar-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .sidebar-nav li {
+    margin-bottom: 0;
+  }
+
+  .sidebar-footer-link {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .form-area-wrapper {
+    width: 90%;
+    max-width: 700px;
+    margin-top: 0;
+  }
+
+  .form-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .form-mascot-image {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+  .input-field,
+  .textarea-field,
+  .custom-select-lookalike,
+  .submit-button,
+  .image-upload-box {
+    width: 100%;
+  }
+
+  .reporting-group {
+    width: 100%;
+  }
+}
+
+
 
 /* --- Hamburger and Mobile Specific Styles --- */
 .hamburger {

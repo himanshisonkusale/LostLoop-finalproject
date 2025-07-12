@@ -143,16 +143,21 @@ body {
     margin-bottom: 0;
 }
 
-.sidebar-nav-item { /* This class is now on the <a> tag */
-    display: flex;
-    align-items: center;
-    font-family: 'Hammersmith One', sans-serif;
-    font-weight: 400;
-    font-size: 29px;
-    line-height: 36.25px;
-    color: #0a3960;
-    padding-left: 35px; /* Indent for icons and text */
-    text-decoration: none; /* Ensure links are not underlined */
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 42px; 
+  font-family: 'Hammersmith One', sans-serif;
+  font-weight: 400;
+  font-size: 29px;
+  line-height: 36.25px;
+  color: #0a3960;
+  padding-left: 35px;
+}
+
+.sidebar-nav-item:last-child {
+  margin-top: auto;
+  margin-bottom: 0;
 }
 
 .sidebar-nav-item .nav-icon {
@@ -161,24 +166,31 @@ body {
     margin-right: 16.25px;
 }
 
-/* Sidebar Footer Item */
-.sidebar-footer-item {
-    display: flex;
-    align-items: center; /* Align icon and text horizontally */
-    font-family: 'Hammersmith One', sans-serif;
-    font-weight: 400;
-    font-size: 29px;
-    line-height: 36.25px;
-    color: #0a3960;
-    padding-left: 35px; /* Match sidebar nav items indent */
-    margin-top: auto; /* Pushes to the bottom of the sidebar */
+.sidebar-nav-item a,
+.sidebar-footer-item span {
+  color: #0a3960; 
+  font-family: 'Hammersmith One', sans-serif;
+  font-weight: 400;
+  font-size: 29px;
+  line-height: 36.25px;
+  text-decoration: none;
+  margin-bottom: 100px;
 }
 
-.sidebar-footer-item a { /* Apply link styles to the anchor */
-    color: #0a3960;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
+.sidebar-footer-item {
+  display: flex;
+  align-items: center;
+  
+  font-family: 'Hammersmith One', sans-serif;
+  font-weight: 400;
+  font-size: 29px; 
+  line-height: 36.25px; 
+  color: #0a3960;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-right: 10px;
+
 }
 
 .sidebar-footer-item .nav-icon-large {
