@@ -1,26 +1,27 @@
 body {
   margin: 0;
   font-family: 'Hammersmith One', sans-serif;
-  background-color: linear-gradient(0deg, #c7e0f9 25.16%, #c7e0f9 37.63%, #c7e0f9 43.69%, #7fc8fd 52.07%);; 
+  background-color: linear-gradient(0deg, #c7e0f9 25.16%, #c7e0f9 37.63%, #c7e0f9 43.69%, #7fc8fd 52.07%);
+  ;
 }
 
 .page-wrapper {
   max-width: 1512px;
   min-height: 982px;
   margin: 0 auto;
-  background: linear-gradient(360deg, #e9e9e9 18.18%, #cde6ff 43.58%, #90d0ff 53.53%); 
-  overflow: hidden; 
+  background: linear-gradient(360deg, #e9e9e9 18.18%, #cde6ff 43.58%, #90d0ff 53.53%);
+  overflow: hidden;
   position: relative;
 }
 
 
 .site-header {
-  background-color: #0a3960; 
+  background-color: #0a3960;
   height: 119px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 67px; 
+  padding-right: 67px;
   box-sizing: border-box;
 }
 
@@ -38,17 +39,17 @@ body {
 }
 
 .header-user-name {
-  color: #ffffff; 
-  font-size: 27px; 
-  line-height: 33.75px; 
-  margin-left: 74px; 
+  color: #ffffff;
+  font-size: 27px;
+  line-height: 33.75px;
+  margin-left: 74px;
 }
 
 .user-avatar {
   width: 80px;
   height: 80px;
   margin-left: 16px;
-  
+
 }
 
 
@@ -59,10 +60,13 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  .header-nav-item, .header-user-name {
-    font-size: 16px; 
+
+  .header-nav-item,
+  .header-user-name {
+    font-size: 16px;
     margin-left: 15px;
   }
+
   .user-avatar {
     width: 50px;
     height: 50px;
@@ -72,23 +76,23 @@ body {
 
 .main-content-area {
   display: flex;
-  padding: 14px 12px 0; 
-  gap: 43px; 
-  align-items: flex-start; 
+  padding: 14px 12px 0;
+  gap: 43px;
+  align-items: flex-start;
 }
 
 .sidebar {
   width: 400px;
   height: 832px;
-  background-color: rgba(65, 89, 100, 0.3); 
-  border-radius: 30px; 
+  background-color: rgba(65, 89, 100, 0.3);
+  border-radius: 30px;
   padding: 56px 0 56px 64px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  color: #0a3960; 
-  font-size: 29px; 
-  line-height: 36.25px; 
+  color: #0a3960;
+  font-size: 29px;
+  line-height: 36.25px;
 }
 
 .sidebar-nav {
@@ -101,18 +105,21 @@ body {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #0A3960; 
-  margin-bottom: 42px; 
+  color: #0A3960;
+  margin-bottom: 42px;
   font-size: 27px;
   font-weight: bold;
 }
+
 .sidebar-nav-item:last-child {
   margin-bottom: 0;
 }
 
 .sidebar-nav-icon {
-  width: 28.75px; 
-  height: 28.75px; 
+  width: 24px;
+  /* Made icons smaller */
+  height: 24px;
+  /* Made icons smaller */
   margin-right: 16.25px;
 }
 
@@ -128,22 +135,29 @@ body {
 }
 
 .sidebar-footer-link a {
-  white-space: nowrap; 
-  margin-right: 10px;
+  white-space: nowrap;
+  /* Removed margin-right to help with centering */
 }
+
 .sidebar-footer-link {
   margin-top: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Ensures content is centered horizontally */
   color: inherit;
-  
+  width: 100%;
+  /* Ensure it takes full width for centering */
+  padding-right: 64px;
+  /* Counteract the left padding of the sidebar to effectively center */
+  box-sizing: border-box;
+  /* Include padding in width calculation */
 }
 
 .nav-icon-large {
-  width: 52px; 
-  height: 48px; 
-  margin-right: 4px; 
+  width: 52px;
+  height: 48px;
+  margin-right: 4px;
 }
 
 .form-content-wrapper {
@@ -155,78 +169,79 @@ body {
   width: 1000px;
   height: 800px;
   background-color: rgba(255, 255, 255, 0.76);
-  border-radius: 20px; 
-  padding: 46px 38px; 
+  border-radius: 20px;
+  padding: 46px 38px;
   box-sizing: border-box;
 }
 
 .form-container-inner {
-  width: 100%; 
-  height: 100%; 
-  background-color: #d0e7ed; 
-  border-radius: 10px; 
-  padding: 60px 40px; 
+  width: 100%;
+  height: 100%;
+  background-color: #d0e7ed;
+  border-radius: 10px;
+  padding: 60px 40px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
 }
 
 .form-title {
-  color: #000000; 
-  font-size: 32px; 
+  color: #000000;
+  font-size: 32px;
   line-height: 40px;
-  text-align: center; 
-  margin-top: 0; 
-  margin-bottom: 53px; 
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 53px;
 }
 
 .form-group {
-  width: 380px; 
-  margin-bottom: 25px; 
+  width: 380px;
+  margin-bottom: 25px;
 }
-.form-group:last-of-type { 
-   margin-bottom: 0;
+
+.form-group:last-of-type {
+  margin-bottom: 0;
 }
 
 
 .form-label {
-  color: #000000; 
-  font-size: 16px; 
-  line-height: 20px; 
+  color: #000000;
+  font-size: 16px;
+  line-height: 20px;
   display: block;
-  margin-bottom: 8px; 
-  text-align: left; 
+  margin-bottom: 8px;
+  text-align: left;
 }
 
 .form-input {
-  width: 100%; 
+  width: 100%;
   height: 46px;
-  background-color: #ffffff; 
-  border-radius: 30px; 
+  background-color: #ffffff;
+  border-radius: 30px;
   border: none;
-  padding: 0 15px; 
+  padding: 0 15px;
   box-sizing: border-box;
-  font-family: 'Hammersmith One', sans-serif; 
+  font-family: 'Hammersmith One', sans-serif;
   font-size: 16px;
 }
 
 .form-buttons {
   display: flex;
-  justify-content: center; 
-  gap: 28px; 
-  margin-top: 77px; 
-  width: 100%; 
-  max-width: 380px; 
+  justify-content: center;
+  gap: 28px;
+  margin-top: 77px;
+  width: 100%;
+  max-width: 380px;
 }
 
 .btn {
   height: 36px;
-  background-color: #303b49; 
-  border-radius: 20px; 
-  color: #ffffff; 
-  font-size: 16px; 
-  line-height: 20px; 
+  background-color: #303b49;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 20px;
   border: none;
   cursor: pointer;
   font-family: 'Hammersmith One', sans-serif;
@@ -234,56 +249,65 @@ body {
   align-items: center;
   justify-content: center;
   flex-grow: 1;
-  max-width: 133px; 
-  padding: 0 10px; 
+  max-width: 133px;
+  padding: 0 10px;
   box-sizing: border-box;
 }
 
-@media (max-width: 1200px) { 
+@media (max-width: 1200px) {
   .main-content-area {
     flex-direction: column;
     align-items: center;
     gap: 20px;
     padding: 20px;
   }
+
   .sidebar {
     width: 100%;
-    max-width: 400px; 
-    height: auto; 
+    max-width: 400px;
+    height: auto;
     padding: 30px;
   }
+
   .nav-item {
     font-size: 24px;
     margin-bottom: 20px;
   }
+
   .form-content-wrapper {
     width: 100%;
-    padding-top: 0; 
+    padding-top: 0;
   }
+
   .form-container-outer {
     width: 100%;
     height: auto;
     padding: 20px;
   }
+
   .form-container-inner {
     padding: 30px 20px;
   }
+
   .form-title {
     font-size: 28px;
     margin-bottom: 30px;
   }
+
   .form-group {
-    width: 100%; 
+    width: 100%;
   }
+
   .form-buttons {
-    flex-direction: column; 
+    flex-direction: column;
     gap: 15px;
     align-items: center;
     margin-top: 40px;
   }
+
   .btn {
     width: 100%;
-    max-width: 280px; 
+    max-width: 280px;
   }
 }
 
@@ -291,23 +315,32 @@ body {
   .sidebar {
     padding: 20px;
   }
+
   .nav-item {
+    /* This class seems undefined or used interchangeably with sidebar-nav-item. Be careful. */
     font-size: 20px;
   }
+
   .nav-icon {
+    /* This class seems undefined or used interchangeably with sidebar-nav-icon. Be careful. */
     width: 24px;
     height: 24px;
     margin-right: 10px;
   }
+
   .nav-icon-large {
     width: 40px;
     height: 38px;
     margin-right: 8px;
   }
+
   .form-title {
     font-size: 24px;
   }
-  .form-label, .form-input, .btn {
+
+  .form-label,
+  .form-input,
+  .btn {
     font-size: 14px;
   }
 }
@@ -318,42 +351,56 @@ body {
     align-items: center;
     gap: 30px;
   }
+
   .sidebar {
     width: 90%;
-    max-width: 400px; 
-    height: auto; 
+    max-width: 400px;
+    height: auto;
     padding: 30px;
   }
+
   .sidebar-nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
   }
+
   .sidebar-nav li {
     margin-bottom: 0;
   }
+
   .sidebar-footer-link {
     margin-top: 20px;
     text-align: center;
+    /* No need for explicit text-align here if justify-content is handling centering */
   }
+
   .form-area-wrapper {
     width: 90%;
     max-width: 700px;
     margin-top: 0;
   }
+
   .form-header {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
+
   .form-mascot-image {
     margin-top: 20px;
     margin-left: 0;
   }
-  .input-field, .textarea-field, .custom-select-lookalike, .submit-button, .image-upload-box {
+
+  .input-field,
+  .textarea-field,
+  .custom-select-lookalike,
+  .submit-button,
+  .image-upload-box {
     width: 100%;
   }
+
   .reporting-group {
     width: 100%;
   }
@@ -365,33 +412,43 @@ body {
     height: auto;
     min-height: 80px;
   }
+
   .header-content {
     flex-direction: column;
     gap: 10px;
     padding: 10px 0;
   }
+
   .header-link {
     margin-right: 0;
   }
+
   .user-name {
     font-size: 22px;
   }
+
   .user-avatar {
     width: 60px;
     height: 60px;
   }
+
   .form-title {
     font-size: 28px;
   }
+
   .form-area-outer-bg {
     padding: 20px;
   }
+
   .form-area-inner-bg {
     padding: 30px 20px;
   }
-  .sidebar-nav a, .sidebar-footer-link a {
+
+  .sidebar-nav a,
+  .sidebar-footer-link a {
     font-size: 24px;
   }
+
   .submit-button {
     font-size: 24px;
     height: 60px;
@@ -421,19 +478,24 @@ body {
   .hamburger {
     display: block;
   }
+
   .sidebar-nav ul {
-  display: flex;
-  flex-direction: column;  /* STACK vertically */
-  align-items: flex-start; /* Align left if needed */
-  gap: 40px;               /* Add space between links */
-}
+    display: flex;
+    flex-direction: column;
+    /* STACK vertically */
+    align-items: flex-start;
+    /* Align left if needed */
+    gap: 40px;
+    /* Add space between links */
+  }
 
-.sidebar-nav li {
-  margin-bottom: 0;  /* No extra margin, gap handles it */
-}
+  .sidebar-nav li {
+    margin-bottom: 0;
+    /* No extra margin, gap handles it */
+  }
 
 
-  
+
   .sidebar {
     position: fixed;
     top: 0;
@@ -471,19 +533,24 @@ body {
   .hamburger {
     display: block;
   }
+
   .sidebar-nav ul {
-  display: flex;
-  flex-direction: column;  /* STACK vertically */
-  align-items: flex-start; /* Align left if needed */
-  gap: 40px;               /* Add space between links */
-}
+    display: flex;
+    flex-direction: column;
+    /* STACK vertically */
+    align-items: flex-start;
+    /* Align left if needed */
+    gap: 40px;
+    /* Add space between links */
+  }
 
-.sidebar-nav li {
-  margin-bottom: 0;  /* No extra margin, gap handles it */
-}
+  .sidebar-nav li {
+    margin-bottom: 0;
+    /* No extra margin, gap handles it */
+  }
 
 
-  
+
   .sidebar {
     position: fixed;
     top: 0;

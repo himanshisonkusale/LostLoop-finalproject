@@ -132,7 +132,13 @@
     "reporter_email": null,
     "image": "uploads/29_Screenshot_2025-01-05_015002.png",
     "status": "Unclaimed",
-    "messages": [],
+    "messages": [
+      {
+        "sender": "sachi.jha",
+        "text": "hi",
+        "timestamp": "2025-07-12 16:22:23"
+      }
+    ],
     "latitude": 23.11,
     "longitude": 11.22
   },

@@ -95,10 +95,11 @@ body {
 
 .sidebar-nav-item {
   display: flex;
+  text-decoration: none;
   align-items: center;
   margin-bottom: 42px; 
   font-family: 'Hammersmith One', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 29px;
   line-height: 36.25px;
   color: #0a3960;
@@ -120,7 +121,7 @@ body {
 .sidebar-footer-item span {
   color: #0a3960; 
   font-family: 'Hammersmith One', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 29px;
   line-height: 36.25px;
   text-decoration: none;
@@ -130,9 +131,9 @@ body {
 .sidebar-footer-item {
   display: flex;
   align-items: center;
-  
+  text-decoration: none;
   font-family: 'Hammersmith One', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 29px; 
   line-height: 36.25px; 
   color: #0a3960;

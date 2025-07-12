@@ -94,6 +94,7 @@ body {
   font-weight: bold;
   font-size: 14px;
   padding: 10px;
+  justify-content: center;
 }
 
 
@@ -267,7 +268,7 @@ body {
   border-radius: 30px;
   width: 347px;
   height: 200vh;
-  padding: 56px 0 50px 50px;
+  padding: 56px 0 50px 0px;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -282,7 +283,7 @@ body {
   align-items: center;
   margin-bottom: 42px;
   font-family: 'Hammersmith One', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 29px;
   line-height: 36.25px;
   color: #0a3960;
@@ -305,7 +306,7 @@ body {
   align-items: center;
   margin-top: auto;
   font-family: 'Hammersmith One', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 29px;
   line-height: 36.25px;
   color: #0a3960;

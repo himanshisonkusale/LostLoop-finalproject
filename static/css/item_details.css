@@ -79,7 +79,7 @@ body {
   height: 832px;
   background-color: rgba(65, 89, 100, 0.3);
   border-radius: 30px;
-  padding: 56px 0 0 64px;
+  padding: 56px 0 0 32px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -101,7 +101,7 @@ body {
   text-decoration: none;
   color: #0a3960;
   font-family: 'Hammersmith One', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 29px;
   line-height: 36.25px;
 

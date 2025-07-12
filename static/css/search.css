@@ -61,6 +61,7 @@ button {
 }
 
 /* User Info Section: Contains Support, Username, and Avatar */
+/* User Info Section: Contains Support, Username, and Avatar */
 .user-info {
     display: flex;
     align-items: center;
@@ -75,7 +76,7 @@ button {
     display: block; /* Default: visible on desktop */
     font-family: 'Hammersmith One', sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 20px; /* This is the target size */
     line-height: 25px;
     color: #ffffff;
     text-decoration: none;
@@ -89,8 +90,8 @@ button {
 .user-name-header { /* Class for the username h2 */
     font-family: 'Hammersmith One', sans-serif;
     font-weight: 400;
-    font-size: 27px;
-    line-height: 33.75px;
+    font-size: 20px; /* CHANGED: Was 27px, now matches #desktop-support-link */
+    line-height: 33.75px; /* You might want to adjust this if 20px looks odd with 33.75px line-height */
     color: #ffffff;
     margin: 0; /* Remove default margin from h2 */
     white-space: nowrap; /* Prevent text wrapping */
@@ -271,7 +272,7 @@ button {
 }
 
 .reset-link {
-    background-color: #555; /* Slightly different color for reset, or match apply */
+    background-color: #303b49; /* Slightly different color for reset, or match apply */
 }
 
 
