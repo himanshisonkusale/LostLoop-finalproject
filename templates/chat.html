@@ -19,11 +19,12 @@
 </section>
 
 <section id="section-chat-interface" class="chat-interface-section">
-<<<<<<< HEAD
     <aside class="sidebar" id="sidebar">
-        <div class="close-btn" onclick="toggleSidebar()">✕</div> <nav class="sidebar-nav">
+        <div class="close-btn" onclick="toggleSidebar()">✕</div> 
+        <nav class="sidebar-nav">
             <ul>
-                <li> <a href="{{ url_for('home') }}" class="sidebar-nav-item">
+                <li> 
+                    <a href="{{ url_for('home') }}" class="sidebar-nav-item">
                         <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Home Icon" class="nav-icon">
                         <span>Home</span>
                     </a>
@@ -43,75 +44,9 @@
             </ul>
         </nav>
         <div class="sidebar-footer-item">
-            <a href="{{ url_for('homescreen') }}" class="sidebar-nav-item how-it-helps">
-                <img src="{{ url_for('static', filename='images/Screenshot 2025-06-07 034101 1.png') }}" alt="How It Helps Icon" class="nav-icon-large">
+            <a href="{{ url_for('homescreen') }}" class="sidebar-nav-item how-it-helps"> <img src="{{ url_for('static', filename='images/Screenshot 2025-06-07 034101 1.png') }}" alt="How It Helps Icon" class="nav-icon-large">
                 <span>How It Helps</span>
             </a>
-=======
-  <aside class="sidebar" id="sidebar">
-    <div class="close-btn" onclick="toggleSidebar()">✕</div> <!-- Only visible on small screens -->
-    <nav class="sidebar-nav">
-      <ul>
-        <li class="sidebar-nav-item">
-          <a href="{{ url_for('home') }}" class="sidebar-nav-item">
-            <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Home Icon" class="nav-icon">
-            <span>Home</span>
-          </a>
-        </li>
-        <li class="sidebar-nav-item">
-          <a href="{{ url_for('search') }}" class="sidebar-nav-item">
-            <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Search Icon" class="nav-icon">
-            <span>Search</span>
-          </a>
-        </li>
-        <li class="sidebar-nav-item">
-          <a href="{{ url_for('support') }}" class="sidebar-nav-item">
-            <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Support Icon" class="nav-icon">
-            <span>Support</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <!-- <a href="{{ url_for('homescreen') }}" class="sidebar-nav-itemsidebar-nav-item how-it-helps">
-      <img src="{{ url_for('static', filename='images/Screenshot 2025-06-07 034101 1.png') }}" alt="Help Icon" class="nav-icon">
-      <span>How It Helps</span>
-    </a> -->
-
-    <div class="sidebar-footer-item">
-      <li class="sidebar-footer-item">
-        <a href="{{ url_for('homescreen') }}" class="sidebar-nav-itemsidebar-nav-item how-it-helps" style = "text-decoration: none;">
-          <img src="{{ url_for('static', filename='images/Screenshot 2025-06-07 034101 1.png') }}" alt="" class="nav-icon-large">
-          <span>How It Helps</span>
-        </a>
-      </li>
-    </div>
-  </aside>
-
-
-
-
-
-  <main class="chat-area-outer">
-    <div class="chat-area-inner">
-      <h1 class="chat-title">Chat about: {{ item.description }}</h1>
-
-      <div class="chat-messages" style="border: 1px solid #ccc; padding: 10px; max-width: 600px; margin-bottom: 20px;">
-        {% for message in item.messages %}
-          <p><strong>{{ message.sender }}:</strong> {{ message.text }} <small>({{ message.timestamp }})</small></p>
-        {% else %}
-          <p>No messages yet.</p>
-        {% endfor %}
-      </div>
-
-      <form method="post">
-        <input type="text" name="sender" placeholder="Your username" required><br><br>
-        <textarea name="text" class="message-input-area" placeholder="Write your message..." rows="3" cols="50" required></textarea><br><br>
-        <div class="chat-actions">
-          <button type="submit" class="button button-send">Send</button>
-          <a href="{{ url_for('item_details', item_id=item.id) }}">
-            <button type="button" class="button button-back">Back to details</button>
-          </a>
->>>>>>> e2de0e5549c783156d0c622790f7f6ba4c1272db
         </div>
     </aside>
 

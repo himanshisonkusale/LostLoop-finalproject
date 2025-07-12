@@ -15,123 +15,80 @@ body {
   flex-direction: column;
 }
 
-.page-wrapper {
-  width: 100%; /* Changed from 100vw for better control within parent */
-  margin: 0 auto;
-  padding: 0;
-  overflow-x: hidden;
-  flex: 1; /* Allow page-wrapper to take available space */
-  display: flex; /* Make it a flex container */
-  flex-direction: column; /* Stack its children (header and main) vertically */
-}
-
-/* --- Header Styles --- */
 .site-header {
-  width: 100%; /* Fill parent width */
-  background: #0a3960; /* Solid dark blue as in images, not gradient */
+  width: 100vw;
+  background: linear-gradient(to right, #003366, #004080);
   height: 119px;
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Align header content to the right by default */
-  padding-right: 67px; /* Matches desktop image */
+  justify-content: space-between;
+  padding: 0 20px;
+  /* less padding for mobile */
   box-sizing: border-box;
   position: relative;
   z-index: 1000;
 }
 
-.header-nav {
-  display: flex;
-  align-items: center;
+
+.page-wrapper {
+  width: 100vw;
+  /* Ensure full width */
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: hidden;
 }
 
+
 .header-nav-item {
-  color: #ffffff;
-  font-family: 'Hammersmith One', sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 25px;
+  color: white;
   text-decoration: none;
-  margin-right: 74px; /* Space between Support and Username */
+  font-weight: 500;
 }
 
 .user-info {
   display: flex;
   align-items: center;
-  gap: 16px; /* Space between username and avatar */
-}
-
-.user-name {
-  color: #ffffff;
-  font-family: 'Hammersmith One', sans-serif;
-  font-weight: 400;
-  font-size: 27px;
-  line-height: 33.75px;
-  margin: 0; /* Reset margin from previous attempts */
+  gap: 10px;
 }
 
 .site-header__avatar {
-  width: 80px; /* Matches avatar size in image */
-  height: 80px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
 }
 
-/* --- Main Layout and Sidebar --- */
-.main-content-area-wrapper {
+.welcome-text {
+  font-size: 16px;
+}
+
+#section-main {
   display: flex;
-  flex: 1; /* Allows main content to fill remaining vertical space */
-  padding: 14px 12px; /* Padding around sidebar and content area */
-  gap: 30px; /* Gap between sidebar and content area */
-  box-sizing: border-box;
+  background: transparent;
+  min-height: calc(100vh - 100px);
 }
 
 .sidebar {
-  width: 347px; /* Fixed width as per image */
-  background-color: rgba(65, 89, 100, 0.3); /* Translucent gray as in image */
-  border-radius: 30px;
-  padding-top: 58px;
-  padding-bottom: 56px;
-  box-sizing: border-box;
+  background: #f0f0f0;
+  width: 10px;
+  padding: 20px 10px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
   display: flex;
   flex-direction: column;
-  flex-shrink: 0; /* Prevent sidebar from shrinking */
-  height: auto; /* Allow content to dictate height */
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  justify-content: space-between;
+  height: 20vh;
 }
 
 .sidebar-nav-item {
-  display: flex;
-  align-items: center;
+  display: block;
+  color: #1a1a1a;
+  font-weight: 500;
+  padding: 10px 20px;
   text-decoration: none;
-  color: #0a3960;
-  padding-left: 64px; /* Indent for sidebar items as in image */
-  margin-bottom: 42px; /* Spacing between items */
-}
-
-.sidebar-nav-item:last-child {
-  margin-bottom: 0;
-}
-
-.sidebar-nav-item .nav-icon {
-  width: 28.75px;
-  height: 28.75px;
-  margin-right: 16.25px; /* Space between icon and text */
-}
-
-.sidebar-nav-item span {
-  font-family: 'Hammersmith One', sans-serif;
-  font-weight: 400;
-  font-size: 29px;
-  line-height: 36.25px;
+  font-size: 16px;
 }
 
 .sidebar-footer-link {
-<<<<<<< HEAD
-=======
   text-decoration: none;
   color: #004080;
   font-weight: bold;
@@ -143,34 +100,17 @@ body {
 
 .content-panel {
   flex: 1;
->>>>>>> e2de0e5549c783156d0c622790f7f6ba4c1272db
   display: flex;
+  justify-content: center;
   align-items: center;
-  text-decoration: none;
-  color: #0a3960;
-  margin-top: auto; /* Pushes to the bottom of the sidebar */
-  padding-left: 50px; /* Indent for footer link */
-}
-
-.sidebar-footer-link .nav-icon-large {
-  width: 52px;
-  height: 48px;
-  margin-right: 16px; /* Adjust as per image if needed */
-}
-
-/* --- Content Panel (for the dialog) --- */
-.content-panel {
-  flex: 1; /* Allows content area to take remaining space */
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
   padding: 20px;
-  background: transparent;
-  box-sizing: border-box;
+  background: transparent !important;
+  /* Remove its own bg */
 }
+
 
 .dialog-outer-container {
-  background-color: #c9effa; /* Light blue background for the dialog box */
+  background-color: #c9effa;
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -178,8 +118,44 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 500px; /* Max width for the dialog box */
-  width: 100%; /* Allow it to shrink on smaller screens */
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+
+@media (max-width: 600px) {
+  #section-main {
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    order: 2;
+    margin-top: 20px;
+  }
+
+  .content-panel {
+    width: 100%;
+    order: 1;
+    min-width: unset;
+    padding: 20px;
+  }
+}
+
+
+
+
+
+
+.dialog-outer-container {
+  background-color: #c9effa;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 90vw;
   margin: 0 auto;
 }
 
@@ -188,11 +164,9 @@ body {
 }
 
 .dialog-question {
-  font-size: 24px; /* Adjusted font size for "Do you really wish to delete your report?" */
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 500;
   margin-bottom: 30px;
-  color: #576365; /* Darker gray color for text as in image */
-  font-family: 'Hammersmith One', sans-serif;
 }
 
 .dialog-buttons {
@@ -203,28 +177,29 @@ body {
 
 .button {
   border: none;
-  padding: 15px 30px; /* Increased padding for buttons */
-  border-radius: 10px; /* Slightly less rounded corners for buttons */
-  font-size: 18px; /* Larger font size for buttons */
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
   cursor: pointer;
   transition: background 0.3s ease;
-  font-family: 'Trispace', sans-serif; /* As per your initial HTML */
-  font-weight: 500;
 }
 
-.button-yes,
+.button-yes {
+  background-color: #303B49;
+  color: white;
+  font-style: 'Trispace', sans-serif;
+}
+
 .button-no {
   background-color: #303B49;
   color: white;
+  font-style: 'Trispace', sans-serif;
 }
 
 .button:hover {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
-<<<<<<< HEAD
-/* --- Hamburger and Mobile Specific Styles --- */
-=======
 
 .site-header {
   width: 100vw;
@@ -450,56 +425,56 @@ body {
 
 
 
-/* e2de0e5549c783156d0c622790f7f6ba4c1272db*/
 .hamburger {
-  display: none; /* Hidden by default on desktop */
+  display: none;
   font-size: 30px;
   color: white;
   cursor: pointer;
+  margin-right: auto;
 }
 
 .close-btn {
   display: none;
   font-size: 26px;
-  color: white; /* Changed to white for visibility on dark sidebar overlay */
+  color: #0a3960;
   text-align: right;
   margin-right: 20px;
   cursor: pointer;
 }
 
-@media screen and (max-width: 1260px) {
-  /* This media query covers larger tablets and smaller desktops */
-  .site-header {
-    justify-content: space-between; /* Space out hamburger and user info */
-    padding: 0 20px;
-  }
+/* Mobile View */
+@media screen and (max-width: 768px) {
   .hamburger {
-    display: block; /* Show hamburger */
-    margin-right: auto; /* Push hamburger to the left */
-  }
-  .header-nav {
-    display: none; /* Hide default nav items */
+    display: block;
   }
 
-  .main-content-area-wrapper {
+  .sidebar-nav ul {
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px; /* Reduce gap on smaller screens */
-    padding: 10px;
+    /* STACK vertically */
+    align-items: flex-start;
+    /* Align left if needed */
+    gap: 40px;
+    /* Add space between links */
   }
+
+  .sidebar-nav li {
+    margin-bottom: 0;
+    /* No extra margin, gap handles it */
+  }
+
+
 
   .sidebar {
-    width: 80%; /* Make sidebar wider in collapsed view */
-    max-width: 300px; /* Limit max width */
     position: fixed;
     top: 0;
     left: -100%;
+    width: 100%;
     height: 100%;
-    background-color: rgba(65, 89, 100, 0.95); /* Darker overlay for sidebar */
+    background-color: rgba(65, 89, 100, 0.95);
     z-index: 1000;
     transition: left 0.3s ease;
-    padding-top: 60px; /* Space for close button */
-    border-radius: 0; /* No border-radius for fixed sidebar */
+    padding-top: 40px;
   }
 
   .sidebar.active {
@@ -508,77 +483,92 @@ body {
 
   .close-btn {
     display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: white;
+    margin-bottom: 20px;
   }
 
-  .sidebar-nav-item {
-    padding-left: 20px; /* Adjust padding for mobile sidebar items */
-    font-size: 24px; /* Larger font size for mobile sidebar */
+  .main-layout {
+    flex-direction: column;
+    padding: 0 16px;
   }
 
-  .sidebar-footer-link {
-    padding-left: 20px;
-    font-size: 24px;
-  }
-
-  .content-panel {
+  .form-area-wrapper {
+    min-width: unset;
     width: 100%;
-    padding: 10px;
   }
 
-  .dialog-outer-container {
-    padding: 20px;
+  
+}
+
+
+@media screen and (max-width: 1260px) {
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar-nav ul {
+    display: flex;
+    flex-direction: column;
+    /* STACK vertically */
+    align-items: flex-start;
+    /* Align left if needed */
+    gap: 40px;
+    /* Add space between links */
+  }
+
+  .sidebar-nav li {
+    margin-bottom: 0;
+    /* No extra margin, gap handles it */
+  }
+
+
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(65, 89, 100, 0.95);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding-top: 40px;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .close-btn {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .main-layout {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  .form-area-wrapper {
+    min-width: unset;
+    width: 100%;
   }
 }
+
 
 @media screen and (max-width: 768px) {
-  /* Smaller mobile screens */
   .site-header {
-    height: 80px; /* Shorter header on smaller mobiles */
-    padding: 0 15px;
+    width: 100% !important; /* instead of 100vw */
+    left: 0;
+    right: 0;
+    position: fixed; /* make sure it stays fixed if you want sticky */
+    top: 0;
+    background: linear-gradient(to right, #003366, #004080);
+    box-sizing: border-box;
+    
   }
+  
 
-  .hamburger {
-    font-size: 26px;
+  body {
+    overflow-x: hidden; /* remove any horizontal scroll */
   }
-
-  .user-name {
-    font-size: 18px;
-    margin-right: 10px;
-  }
-  .site-header__avatar {
-    width: 50px;
-    height: 50px;
-  }
-
-  .dialog-question {
-    font-size: 18px;
-    line-height: 1.4;
-  }
-
-  .button {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-}
-
-/* Ensure body overflow-x is hidden to prevent horizontal scroll */
-body {
-  overflow-x: hidden;
-}
-
-/* Styling for the Home, Search, Support icons */
-.nav-icon {
-  width: 28.75px;
-  height: 28.75px;
-  margin-right: 16.25px;
-}
-
-.nav-icon-large {
-  width: 52px;
-  height: 48px;
-  margin-right: 16px;
 }
