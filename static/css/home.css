@@ -553,7 +553,39 @@ body {
   }
 }
 
-@media (min-width: 300px) and (max-width: 480px){
+@media (max-width: 370px){
+  .hamburger{
+    margin-left:-11px;
+    margin-top:10px;
+  }
+  .site-header__nav{
+    margin-right:-61px;
+  }
+  .site-header__nav-item--support{
+    margin-right:21px;
+  }
+  .site-header__avatar{
+    height:54px;
+    margin-left:20px;
+  }
+}
+@media (max-width: 270px){
+  .hamburger{
+    margin-left:-11px;
+    margin-top:10px;
+  }
+  .site-header__nav{
+    margin-right:-61px;
+  }
+  .site-header__nav-item--support{
+    margin-right:21px;
+  }
+  .site-header__avatar{
+    height:54px;
+    margin-left:20px;
+  }
+}
+@media (max-width: 550px){
   .hamburger{
     margin-left:-11px;
     margin-top:10px;
