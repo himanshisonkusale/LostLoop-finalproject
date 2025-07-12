@@ -552,3 +552,20 @@ body {
     /* Ensure proper layout */
   }
 }
+
+@media (min-width: 300px) and (max-width: 480px){
+  .hamburger{
+    margin-left:-11px;
+    margin-top:10px;
+  }
+  .site-header__nav{
+    margin-right:-61px;
+  }
+  .site-header__nav-item--support{
+    margin-right:21px;
+  }
+  .site-header__avatar{
+    height:54px;
+    margin-left:20px;
+  }
+}
