@@ -1,133 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
-    <title>Search Page</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/search.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
 </head>
 <body>
-<section id="section-header">
-  <div class="page-wrapper">
-    <header class="site-header">
-      <nav class="header-nav">
-        <div class="hamburger" onclick="toggleSidebar()">☰</div>
-        <a href="{{ url_for('support') }}" class="header-nav-item">Support</a>
-      </nav>
-      <div class="user-info">
-        <h2 style="color: #FFFFFF; font-size: 19px;">{{username}} </h2>
-        <img src="{{ url_for('static', filename='images/Ellipse 2.svg') }}" alt="User Avatar" class="site-header__avatar" style="margin-left:20px;">
-      </div>
-    </header>
-  </div>
-</section>
 
-<section id="section-main">
-  <div class="page-wrapper">
-    <div class="main-layout">
-      <aside class="sidebar" id="sidebar">
-  <div class="close-btn" onclick="toggleSidebar()">✕</div>
-
-  <div class="sidebar-content">
-    <nav class="sidebar-nav">
-      <ul style="list-style:none;">
-      <li><a href="{{ url_for('home') }}" class="sidebar-nav-item">
-        <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Home icon" class="nav-icon">
-        <span>Home</span>
-      </a></li>
-      <li><a href="{{ url_for('search') }}" class="sidebar-nav-item">
-        <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Search icon" class="nav-icon">
-        <span>Search</span>
-      </a></li>
-      <li><a href="{{ url_for('support') }}" class="sidebar-nav-item">
-        <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Support icon" class="nav-icon">
-        <span>Support</span>
-      </a></li>
-      </ul>
-    </nav>
-
-    <div class="sidebar-footer">
-      <a href="{{ url_for('homescreen') }}" class="sidebar-footer-link">
-        <img src="{{ url_for('static', filename='images/Screenshot 2025-06-07 034101 1.png') }}" alt="Information icon" class="nav-icon-large">
-        <span>How It Helps</span>
-      </a>
-    </div>
-  </div>
-</aside>
-
-
-      <main class="content-area">
-        <form method="GET" action="{{ url_for('search') }}">
-          <div class="filters-section">
-            <div class="filter-grid">
-              <div class="filter-group">
-                <label for="type">Type:</label>
-                <input type="text" name="type" id="type" class="filter-input" placeholder="All or any specific item.">
-              </div>
-
-              <div class="filter-group">
-                <label for="status">Status:</label>
-                <input type="text" name="status" id="status" class="filter-input" placeholder="Lost or Found.">
-              </div>
-
-              <div class="filter-group">
-                <label for="location">Location:</label>
-                <input type="text" name="location" id="location" class="filter-input" placeholder="Library, School, etc.">
-              </div>
-
-              <div class="filter-group">
-                <label for="thing">Thing:</label>
-                <input type="text" name="thing" id="thing" class="filter-input" placeholder="Bag, Wallet, etc.">
-              </div>
-            </div>
-            <div class="filter-buttons">
-              <button type="submit" class="apply-filter-btn">Apply Filter</button>
-              <a href="{{ url_for('search') }}" class="apply-filter-btn reset-link">Clear Filters</a>
-            </div>
-          </div>
-        </form>
-
-        {% if total_results is defined and (request.args.get('type') or request.args.get('status') or request.args.get('location') or request.args.get('thing')) %}
-        <p style="font-size: 20px; margin-bottom: 30px; text-align: center;">
-          {{ total_results }} item{{ 's' if total_results != 1 else '' }} matched your choice.
-        </p>
-        {% endif %}
-
-        <div class="results-section">
-          {% for item in items %}
-          <article class="result-item {% if item['status'] == 'Claimed' %}claimed{% else %}unclaimed{% endif %}">
-            <div class="result-image-placeholder">
-              <span>Image</span>
-            </div>
-            <div class="result-info">
-              <p>{{ item['type'] }}: {{ item['description'] }}</p>
-              <p class="result-location">{{ item['location'] }}</p>
-              <p class="result-status {% if item['status'] == 'Claimed' %}claimed{% else %}unclaimed{% endif %}">
-                {{ item['status'] }}
-              </p>
-            </div>
-            <div class="result-actions">
-              <a href="{{ url_for('item_details', item_id=item['id']) }}" class="custom-btn">Details</a>
-              <a href="{{ url_for('chat', item_id=item['id']) }}" class="custom-btn">Chat</a>
-            </div>
-          </article>
-          {% endfor %}
-          <p class="info-placeholder">
-            {% if items|length == 0 %}
-             No results found
-            {% endif %}
-          </p>
+    <section id="section-header">
+        <div class="page-wrapper">
+            <header class="site-header">
+                <nav class="header-nav">
+                    <div class="hamburger" onclick="toggleSidebar()">☰</div>
+                    </nav>
+                <div class="user-info">
+                    <a href="{{ url_for('support') }}" class="header-support-link-desktop">Support</a>
+                    <h2 class="user-name-header">{{username}}</h2>
+                    <img src="{{ url_for('static', filename='images/Ellipse 2.svg') }}" alt="User Avatar" class="site-header__avatar">
+                </div>
+            </header>
         </div>
-      </main>
+    </section>
+
+    <div class="main-layout page-wrapper">
+        <aside class="sidebar" id="sidebar">
+            <div class="close-btn" onclick="toggleSidebar()">✕</div>
+
+            <div class="sidebar-content">
+                <nav class="sidebar-nav">
+                    <ul style="list-style:none;">
+                        <li><a href="{{ url_for('home') }}" class="sidebar-nav-item">
+                            <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Home icon" class="nav-icon">
+                            <span>Home</span>
+                        </a></li>
+                        <li><a href="{{ url_for('search') }}" class="sidebar-nav-item">
+                            <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Search icon" class="nav-icon">
+                            <span>Search</span>
+                        </a></li>
+                        <li><a href="{{ url_for('support') }}" class="sidebar-nav-item sidebar-support-link-mobile">
+                            <img src="{{ url_for('static', filename='images/2043.png_860 (1) 12.png') }}" alt="Support icon" class="nav-icon">
+                            <span>Support</span>
+                        </a></li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <a href="{{ url_for('homescreen') }}" class="sidebar-footer-link">
+                        <img src="{{ url_for('static', filename='images/Screenshot 2025-06-07 034101 1.png') }}" alt="Information icon" class="nav-icon-large">
+                        <span>How It Helps</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <section class="filters-section">
+                <div class="filter-grid">
+                    <div class="filter-group">
+                        <label for="type">Type:</label>
+                        <input type="text" id="type" name="type" class="filter-input">
+                    </div>
+                    <div class="filter-group">
+                        <label for="status">Status:</label>
+                        <input type="text" id="status" name="status" class="filter-input">
+                    </div>
+                    <div class="filter-group">
+                        <label for="location">Location:</label>
+                        <input type="text" id="location" name="location" class="filter-input">
+                    </div>
+                    <div class="filter-group">
+                        <label for="thing">Thing:</label>
+                        <input type="text" id="thing" name="thing" class="filter-input">
+                    </div>
+                </div>
+                <div class="filter-buttons">
+                    <button type="button" class="apply-filter-btn">Apply Filter</button>
+                </div>
+            </section>
+
+            <section class="results-section">
+                <div class="result-item">
+                    <div class="result-image-placeholder">
+                        <span>image</span>
+                    </div>
+                    <div class="result-info">
+                        <p>Lost: Thing</p>
+                        <p>Location</p>
+                        <p class="result-status claimed">Status</p> </div>
+                    <div class="result-actions">
+                        <a href="#" class="custom-btn">Details</a>
+                        <a href="#" class="custom-btn">Chat</a>
+                    </div>
+                </div>
+                <div class="info-placeholder">
+                    Info here
+                </div>
+            </section>
+        </main>
     </div>
-  </div>
-</section>
-<script>
-  function toggleSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    sidebar.classList.toggle("active");
-  }
-</script>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
